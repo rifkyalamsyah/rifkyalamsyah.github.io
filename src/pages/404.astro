@@ -1,0 +1,25 @@
+---
+import Layout from '../layouts/MainLayout.astro';
+import Hi from '../components/Hi.astro';
+
+const title = '404 - Not Found';
+const seoDesc = 'Page Not Found';
+---
+
+<Layout {title} {seoDesc}>
+  <main class='mt-auto'>
+    <section class='py-20'>
+      <div class='container mx-auto text-center'>
+        <p class="text-4xl text-gray-500 mb-2">Whoops!</p>
+        <h1 class=' text-4xl sm:text-6xl'>
+          <span class='bg-gradient-to-r from-indigo-500 to-indigo-900 bg-clip-text text-transparent'>404 </span>
+          Not Found
+        </h1>
+        <p class="text-xl text-gray-500 mt-2">Sorry, Page Not Found</p>
+        <div class="mt-8">
+            <a href="/" class="bg-indigo-400 hover:bg-gray-400 text-indigo-950 px-5 py-3 rounded-full ">Back to Home</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
