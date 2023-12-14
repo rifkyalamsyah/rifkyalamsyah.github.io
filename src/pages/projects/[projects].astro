@@ -38,12 +38,12 @@ const { projects } = Astro.params;
 const { name, desc } = Astro.props;
 ---
 
-<Layout>
+<Layout title={name}  seoDesc={name}`Project`>
     <main>
         <section>
             <div class='container mx-auto py-8'>
                 <div class="py-5 lg:py-8">
-                    <span class="text-gray-400 text-lg"><a href="/projects" class="text-gray-700 dark:text-indigo-500 text-lg hover:underline dark:hover:text-white" data-astro-prefetch>Projects</a> / {name}</span>
+                    <span class="text-gray-500 dark:text-gray-400 text-lg"><a href="/projects" class="text-gray-700 dark:text-indigo-400 text-lg hover:underline dark:hover:text-white" data-astro-prefetch>Projects</a> / {name}</span>
                 </div>
                 <div class='flex justify-center'>
                   <img class='rounded-2xl' src=`/images/${projects}.jpg` alt={name} width="1440" height="480">

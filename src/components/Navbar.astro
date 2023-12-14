@@ -15,7 +15,7 @@ import IconMoon from './icons/Moon.astro';
           ></a
         >
         <div class='block lg:hidden'>
-          <MenuIcon class='w-8 h-8 dark:text-white' />
+          <MenuIcon class='w-8 h-8 text-gray-600 dark:text-white' />
         </div>
       </div>
       <MenuItems
@@ -73,7 +73,15 @@ import IconMoon from './icons/Moon.astro';
 
   #toggle:checked ~ label div.toggle-circle {
     @apply translate-x-4;
+    @apply duration-700;
+    @apply ease-in-out;
   }
+
+  #toggle:not(:checked) ~ label div.toggle-circle {
+  @apply translate-x-0;
+  @apply duration-700;  
+  @apply ease-in-out;
+}
 </style>
 
 <script is:inline>
