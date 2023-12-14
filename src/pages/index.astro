@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/MainLayout.astro';
+import Hi from '../components/Hi.astro';
+import Info from '../components/Info.astro';
+
+const title = 'Home - Porto';
+const seoDesc = 'UI Designer & Frontend Dev';
+---
+
+<Layout {title} {seoDesc}>
+  <main class='mt-auto'>
+    <section class='py-20'>
+      <div class='container mx-auto'>
+        <Hi client:load />
+        <h1 class='text-center text-4xl sm:text-6xl'>
+          <span class='bg-gradient-to-r from-indigo-500 to-indigo-900 bg-clip-text text-transparent'>I'm </span>
+          Rifky Alamsyah
+        </h1>
+        <Info client:load />
+      </div>
+    </section>
+  </main>
+</Layout>

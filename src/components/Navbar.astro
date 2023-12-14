@@ -1,0 +1,103 @@
+---
+import { Astronav, MenuItems, MenuIcon } from 'astro-navbar';
+import IconSun from './icons/Sun.astro';
+import IconMoon from './icons/Moon.astro';
+---
+
+<header class='py-5'>
+  <div class='container mx-auto flex flex-col lg:flex-row'>
+    <Astronav>
+      <div class='flex w-full justify-between'>
+        <a href='/' class='text-2xl font-bold h-0' data-astro-prefetch
+          ><span
+            class='bg-gradient-to-r from-indigo-800 to-indigo-400 bg-clip-text text-transparent'
+            >Porto.</span
+          ></a
+        >
+        <div class='block lg:hidden'>
+          <MenuIcon class='w-8 h-8 dark:text-white' />
+        </div>
+      </div>
+      <MenuItems
+        class='hidden lg:flex mt-5 lg:mt-0 lg:bg-inherit p-5 lg:p-0 rounded-lg bg-slate-100 dark:bg-slate-800 dark:lg:bg-inherit'
+      >
+        <ul class='flex flex-col lg:flex-row gap-4 lg:gap-5'>
+          <li>
+            <a
+              href='/'
+              class='text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-white'
+              data-astro-prefetch>Home</a
+            >
+          </li>
+          <li>
+            <a
+              href='/projects'
+              class='text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-white'
+              data-astro-prefetch>Projects</a
+            >
+          </li>
+          <li>
+            <a
+              href='/about'
+              class='text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-white'
+              data-astro-prefetch>About</a
+            >
+          </li>
+          <li class="flex items-center">
+            <div class='flex'>
+              <input type='checkbox' id='toggle' class='hidden' />
+              <label for='toggle'>
+                
+                <div
+                  class='w-10 h-6 bg-slate-500 flex items-center p-1 gap-2 rounded-full cursor-pointer'
+                >
+                  <IconSun />
+                  <div class='w-4 h-4 bg-white rounded-full toggle-circle absolute'>
+                  </div>
+                  <IconMoon class='fill-blue-500'/>
+                </div>
+              </label>
+              
+            </div>
+          </li>
+        </ul>
+      </MenuItems>
+    </Astronav>
+  </div>
+</header>
+
+<style>
+  .hidden {
+    display: none;
+  }
+
+  #toggle:checked ~ label div.toggle-circle {
+    @apply translate-x-4;
+  }
+</style>
+
+<script is:inline>
+  const toggleMode = document.querySelector('#toggle');
+  const html = document.querySelector('html');
+
+  toggleMode.addEventListener('click', function () {
+    if (toggle.checked) {
+      html.classList.add('dark');
+      localStorage.theme = 'dark';
+    } else {
+      html.classList.remove('dark');
+      localStorage.theme = 'light';
+    }
+  });
+
+  // matches toggle position
+  if (
+    localStorage.theme === 'dark' ||
+    (!('theme' in localStorage) &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches)
+  ) {
+    toggleMode.checked = true;
+  } else {
+    toggleMode.checked = false;
+  }
+</script>

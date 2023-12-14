@@ -1,0 +1,51 @@
+---
+import Layout from '../layouts/MainLayout.astro';
+import { Image } from 'astro:assets';
+
+const title = 'Projects - Porto';
+const seoDesc = 'Projects Rifky Alamsyah';
+const textProject = '- Project'
+const altText = 'project-img'
+// links
+const project1st = '/projects/astro-green';
+const project2nd = '/projects/astro-rose';
+const project3rd = '/projects/astro-yellow';
+const project4th = '/projects/astro-purple';
+---
+
+<Layout {title} {seoDesc}>
+  <main>
+    <section>
+      <div class='container mx-auto py-8'>
+        <p class='text-2xl md:text-4xl text-center bg-gradient-to-r from-indigo-500 to-indigo-900 bg-clip-text text-transparent'>Project's</p>
+        <p  class='text-lg text-center text-gray-500'>Latest project as a UI Designer & Frontend Dev</p>
+        <div class="my-10 grid md:grid-cols-2 gap-4 justify-items-center">
+            <a href={project1st} data-astro-prefetch>
+              <div>
+                <Image class='rounded-xl' src='/images/astro-green.jpg' alt={altText} width="640" height="480"/>
+                <h1 class="py-4 text-xl text-gray-600 dark:text-gray-400 hover:text-slate-400 dark:hover:text-white">Astro Green {textProject}</h1>
+              </div>
+            </a>
+            <a href={project2nd} data-astro-prefetch>
+              <div>
+                <Image class='rounded-xl' src='/images/astro-rose.jpg' alt={altText} width="640" height="480"/>
+                <h1 class="py-4 text-xl text-gray-600 dark:text-gray-400 hover:text-slate-400 dark:hover:text-white">Astro Rose {textProject}</h1>
+              </div>
+            </a>
+            <a href={project3rd} data-astro-prefetch>
+              <div>
+                <Image class='rounded-xl' src='/images/astro-yellow.jpg' alt={altText} width="640" height="480"/>
+                <h1 class="py-4 text-xl text-gray-600 dark:text-gray-400 hover:text-slate-400 dark:hover:text-white">Astro Yellow {textProject}</h1>
+              </div>
+            </a>
+            <a href={project4th} data-astro-prefetch>
+              <div>
+                <Image class='rounded-xl' src='/images/astro-purple.jpg' alt={altText} width="640" height="480"/>
+                <h1 class="py-4 text-xl text-gray-600 dark:text-gray-400 hover:text-slate-400 dark:hover:text-white">Astro Purple {textProject}</h1>
+              </div>
+            </a>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

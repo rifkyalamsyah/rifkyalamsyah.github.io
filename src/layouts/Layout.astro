@@ -1,0 +1,21 @@
+---
+import Head from './Head.astro';
+import Nav from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+const { title, seoDesc } = Astro.props;
+---
+
+<html lang='en'>
+  <Head title={title} seoDesc={seoDesc}  />
+  <body class='dark:bg-slate-900 duration-1000 dark:text-white min-h-screen flex flex-col content-between'>
+    <Nav />
+    <slot />
+    <Footer />
+  </body>
+</html>
+
+<style is:global>
+  body {
+    font-family: 'DM Sans', sans-serif;
+  }
+</style>

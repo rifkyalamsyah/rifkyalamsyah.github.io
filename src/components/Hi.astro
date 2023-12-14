@@ -1,0 +1,21 @@
+<div id='typed-strings-hi' class='hidden'>
+  <p>Hi,</p>
+  <p>Halo,</p>
+  <p>안녕하세요,</p>
+  <p>Hola,</p>
+  <p>こんにちは,</p>
+  <p>Olá,</p>
+</div>
+<div class='text-2xl md:text-4xl text-center text-gray-400 mb-4'>
+  <span id='typed-hi'></span>
+</div>
+
+<script>
+  import Typed from 'typed.js';
+
+  var typed = new Typed('#typed-hi', {
+    stringsElement: '#typed-strings-hi',
+    typeSpeed: 20,
+    loop: true,
+  });
+</script>
