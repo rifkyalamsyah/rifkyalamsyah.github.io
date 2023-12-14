@@ -7,4 +7,6 @@ export default defineConfig({
   output: 'static',
   prefetch: true,
   compressHTML: false,
+  site: 'https://rifkyalamsyah.github.io',
+  base: '/',
 });
