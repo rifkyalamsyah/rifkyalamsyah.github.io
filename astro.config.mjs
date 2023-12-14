@@ -8,5 +8,5 @@ export default defineConfig({
   prefetch: true,
   compressHTML: false,
   site: 'https://rifkyalamsyah.github.io',
-  base: '/fly-farm',
+  base: '/',
 });
