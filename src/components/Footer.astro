@@ -1,15 +1,7 @@
 ---
-
+const year = new Date().getFullYear();
 ---
 
-<footer class="text-center mt-auto py-10 text-gray-600 dark:text-gray-400">
-  <small
-    >Copyright &copy; <span id='copyright'></span> | all right reserved</small
-  >
+<footer class='text-center mt-auto py-10 text-gray-600 dark:text-gray-400'>
+  <small>Copyright &copy; {year} | all right reserved</small>
 </footer>
-
-<script is:inline>
-  document.querySelector('#copyright').textContent = new Date()
-    .getFullYear()
-    .toString();
-</script>
