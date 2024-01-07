@@ -10,7 +10,7 @@ import IconMoon from './icons/Moon.astro';
       <div class='flex w-full justify-between'>
         <a href='/' class='text-2xl font-bold h-0' data-astro-prefetch
           ><span
-            class='bg-gradient-to-r from-indigo-800 to-indigo-400 bg-clip-text text-transparent'
+            class='bg-gradient-to-r from-wood-800 to-wood-400 bg-clip-text text-transparent'
             >Porto.</span
           ></a
         >
@@ -19,28 +19,35 @@ import IconMoon from './icons/Moon.astro';
         </div>
       </div>
       <MenuItems
-        class='hidden lg:flex mt-5 lg:mt-0 lg:bg-inherit p-5 lg:p-0 rounded-lg bg-slate-100 dark:bg-slate-800 dark:lg:bg-inherit'
+        class='hidden lg:flex mt-5 lg:mt-0 lg:bg-inherit p-5 lg:p-0 rounded-lg bg-wood-100 dark:bg-wood-950 dark:lg:bg-inherit border border-wood-200/50 dark:border-wood-800/50 lg:border-none duration-1000'
       >
         <ul class='flex flex-col lg:flex-row gap-4 lg:gap-5'>
           <li>
             <a
               href='/'
-              class='text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-white'
+              class='text-wood-600 dark:text-wood-400 hover:text-wood-950 dark:hover:text-white text-2xl lg:text-base'
               data-astro-prefetch>Home</a
             >
           </li>
           <li>
             <a
               href='/projects'
-              class='text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-white'
+              class='text-wood-600 dark:text-wood-400 hover:text-wood-950 dark:hover:text-white text-2xl lg:text-base'
               data-astro-prefetch>Projects</a
             >
           </li>
           <li>
             <a
-              href='/about'
-              class='text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-white'
-              data-astro-prefetch>About</a
+              href='https://read.cv/rifkyalamsyah'
+              class='text-wood-600 dark:text-wood-400 hover:text-wood-950 dark:hover:text-white text-2xl lg:text-base'
+              target="_blank">About</a
+            >
+          </li>
+          <li>
+            <a
+              href='https://rifky.gumroad.com'
+              class='text-wood-600 dark:text-wood-400 hover:text-wood-950 dark:hover:text-white text-2xl lg:text-base'
+              target="_blank">Store</a
             >
           </li>
           <li class="flex items-center">
@@ -49,12 +56,12 @@ import IconMoon from './icons/Moon.astro';
               <label for='toggle'>
                 
                 <div
-                  class='w-10 h-6 bg-slate-500 flex items-center p-1 gap-2 rounded-full cursor-pointer'
+                  class='w-10 h-6 bg-wood-500 flex items-center p-1 gap-2 rounded-full cursor-pointer'
                 >
                   <IconSun />
                   <div class='w-4 h-4 bg-white rounded-full toggle-circle absolute'>
                   </div>
-                  <IconMoon class='fill-blue-500'/>
+                  <IconMoon />
                 </div>
               </label>
               
