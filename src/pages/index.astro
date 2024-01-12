@@ -27,3 +27,10 @@ const seoDesc = 'UI Designer & Frontend Dev';
     </section>
   </main>
 </Layout>
+
+<script is:inline>
+  document.addEventListener('astro:page-load', () => {
+    // This only runs once.
+    setupStuff();
+  }, { once: true });
+</script>
