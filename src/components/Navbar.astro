@@ -4,7 +4,9 @@ import IconSun from './icons/Sun.astro';
 import IconMoon from './icons/Moon.astro';
 ---
 
-<header class='py-5'>
+<header
+  class='py-5 border-b border-wood-100/80 dark:border-wood-800/20 duration-1000'
+>
   <div class='container mx-auto flex flex-col lg:flex-row'>
     <Astronav>
       <div class='flex w-full justify-between'>
@@ -40,31 +42,31 @@ import IconMoon from './icons/Moon.astro';
             <a
               href='https://read.cv/rifkyalamsyah'
               class='text-wood-600 dark:text-wood-400 hover:text-wood-950 dark:hover:text-white text-2xl lg:text-base'
-              target="_blank">About</a
+              target='_blank'>About</a
             >
           </li>
           <li>
             <a
               href='https://rifky.gumroad.com'
               class='text-wood-600 dark:text-wood-400 hover:text-wood-950 dark:hover:text-white text-2xl lg:text-base'
-              target="_blank">Store</a
+              target='_blank'>Store</a
             >
           </li>
-          <li class="flex items-center">
+          <li class='flex items-center'>
             <div class='flex'>
               <input type='checkbox' id='toggle' class='hidden' />
               <label for='toggle'>
-                
                 <div
                   class='w-10 h-6 bg-wood-500 flex items-center p-1 gap-2 rounded-full cursor-pointer'
                 >
                   <IconSun />
-                  <div class='w-4 h-4 bg-white rounded-full toggle-circle absolute'>
+                  <div
+                    class='w-4 h-4 bg-white rounded-full toggle-circle absolute'
+                  >
                   </div>
                   <IconMoon />
                 </div>
               </label>
-              
             </div>
           </li>
         </ul>
@@ -85,34 +87,40 @@ import IconMoon from './icons/Moon.astro';
   }
 
   #toggle:not(:checked) ~ label div.toggle-circle {
-  @apply translate-x-0;
-  @apply duration-700;  
-  @apply ease-in-out;
-}
+    @apply translate-x-0;
+    @apply duration-700;
+    @apply ease-in-out;
+  }
 </style>
 
 <script is:inline>
-  const toggleMode = document.querySelector('#toggle');
-  const html = document.querySelector('html');
+  const darkMode = () => {
+    const toggleMode = document.querySelector('#toggle');
+    const html = document.querySelector('html');
 
-  toggleMode.addEventListener('click', function () {
-    if (toggle.checked) {
-      html.classList.add('dark');
-      localStorage.theme = 'dark';
+    toggleMode.addEventListener('click', function () {
+      if (toggle.checked) {
+        html.classList.add('dark');
+        localStorage.theme = 'dark';
+      } else {
+        html.classList.remove('dark');
+        localStorage.theme = 'light';
+      }
+    });
+
+    // matches toggle position
+    if (
+      localStorage.theme === 'dark' ||
+      (!('theme' in localStorage) &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
+      toggleMode.checked = true;
     } else {
-      html.classList.remove('dark');
-      localStorage.theme = 'light';
+      toggleMode.checked = false;
     }
-  });
+  };
 
-  // matches toggle position
-  if (
-    localStorage.theme === 'dark' ||
-    (!('theme' in localStorage) &&
-      window.matchMedia('(prefers-color-scheme: dark)').matches)
-  ) {
-    toggleMode.checked = true;
-  } else {
-    toggleMode.checked = false;
-  }
+  darkMode();
+
+  document.addEventListener('astro:after-swap', darkMode);
 </script>
