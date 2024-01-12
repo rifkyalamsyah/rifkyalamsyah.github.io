@@ -1,15 +1,13 @@
 ---
-import Head from './MainHead.astro';
-import Nav from '../components/Navbar.astro';
-import Footer from '../components/Footer.astro';
+import Head from '@layouts/MainHead.astro';
+import Nav from '@components/Navbar.astro';
+import Footer from '@components/Footer.astro';
 const { title, seoDesc } = Astro.props;
 ---
 
 <html lang='en' class=''>
   <Head title={title} seoDesc={seoDesc} />
-  <body
-    class='dark:bg-wood-900 duration-1000 dark:text-white flex flex-col content-between min-h-screen'
-  >
+  <body class='dark:bg-wood-900 duration-1000 dark:text-white flex flex-col content-between min-h-screen'>
     <Nav />
     <slot />
     <Footer />
@@ -17,7 +15,7 @@ const { title, seoDesc } = Astro.props;
 </html>
 
 <style is:global>
-  body {
+  html {
     font-family: 'DM Sans', sans-serif;
   }
 </style>
