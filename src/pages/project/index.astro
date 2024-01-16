@@ -1,0 +1,63 @@
+---
+import Layout from '@layouts/MainLayout.astro';
+
+import { getCollection } from 'astro:content';
+const project = await getCollection('portfolio');
+
+// seo
+const title = 'Projects - Rifky Alamsyah';
+const seoDesc = 'Projects Rifky Alamsyah';
+---
+
+<Layout {title} {seoDesc}>
+  <main>
+    <section>
+      <div class='container mx-auto py-8'>
+        <div class='py-5'>
+          <h1
+            class='text-2xl md:text-4xl text-center text-wood-800 dark:text-wood-400'
+          >
+            Projects
+          </h1>
+          <p class='text-lg text-center text-gray-500 dark:text-gray-400'>
+            Showcase of innovative design solutions
+          </p>
+        </div>
+        <div
+          class='grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center mt-5'
+        >
+          {
+            project.map((projectPost) => (
+              <div>
+                <a href={`/project/${projectPost.slug}`}>
+                  <img
+                    src={projectPost.data.heroImage}
+                    width='480'
+                    height='300'
+                    alt={projectPost.slug}
+                    class='rounded-xl'
+                  />
+                </a>
+                <div class='mt-4 flex flex-wrap justify-between content-end'>
+                  <a
+                    href={`/project/${projectPost.slug}`}
+                    class='text-xl text-wood-600 hover:text-wood-800 dark:text-wood-300 dark:hover:text-white'
+                  >
+                    {projectPost.data.title} - {projectPost.data.category}
+                  </a>
+                  <a
+                    href={projectPost.data.linkWeb}
+                    class='text-wood-400 hover:text-wood-600 dark:text-wood-600 dark:hover:text-wood-300 hover:underline flex items-center gap-1'
+                    target='_blank'
+                  >
+                    Live Preview
+                  </a>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

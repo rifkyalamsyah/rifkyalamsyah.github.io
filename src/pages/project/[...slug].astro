@@ -1,0 +1,58 @@
+---
+import Layout from '@layouts/MainLayout.astro';
+import IconBack from '@components/icons/caret-left.astro';
+import IconLink from '@components/icons/link.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('portfolio');
+  return projects.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+const title = `${entry.data.sortTitle} - Rifky Alamsyah`;
+---
+
+<Layout {title}>
+  <main>
+    <section class='py-8'>
+      <div class='container mx-auto'>
+        <div class='mb-4'>
+          <a
+            href='/project'
+            class='text-wood-400 hover:text-wood-800 dark:hover:text-white flex items-center'
+            ><span><IconBack /></span> Back to projects</a
+          >
+        </div>
+        <hr class='border-wood-100/80 dark:border-wood-800/20 duration-1000' />
+        <div class='flex flex-col justify-center'>
+          <article
+            class='mt-8 mx-auto prose lg:prose-xl dark:prose-invert prose-img:rounded-xl prose-a:no-underline hover:prose-a:underline prose-headings:text-wood-800 dark:prose-headings:text-wood-200 prose-p:text-wood-800 dark:prose-p:text-wood-300'
+          >
+            <h1>{entry.data.title} - {entry.data.category}</h1>
+            <p>{entry.data.desc}</p>
+            <a
+              href={entry.data.linkWeb}
+              target='_blank'
+              class='flex items-center gap-1'><span><IconLink /></span> Visit Website</a
+            >
+            <div class='my-5'>
+              <img
+                src={entry.data.heroImage}
+                width='1440'
+                height='800'
+                alt={entry.slug}
+              />
+            </div>
+            <Content />
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
+
