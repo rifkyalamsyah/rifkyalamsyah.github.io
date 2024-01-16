@@ -31,7 +31,8 @@ export default {
           950: '#141414',
         },
       },
+      
     },
   },
-  plugins: [require('flowbite/plugin')],
+  plugins: [require('flowbite/plugin'), require('@tailwindcss/typography')],
 };
