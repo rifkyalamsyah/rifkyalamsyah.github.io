@@ -2,6 +2,8 @@
 import Layout from '@layouts/MainLayout.astro';
 import IconBack from '@components/icons/caret-left.astro';
 import IconLink from '@components/icons/link.astro';
+
+import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -14,10 +16,13 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
+
+// SEO
 const title = `${entry.data.sortTitle} - Rifky Alamsyah`;
+const seoDesc = `${entry.data.sortTitle} Project`;
 ---
 
-<Layout {title}>
+<Layout {title} {seoDesc}>
   <main>
     <section class='py-8'>
       <div class='container mx-auto'>
@@ -38,14 +43,17 @@ const title = `${entry.data.sortTitle} - Rifky Alamsyah`;
             <a
               href={entry.data.linkWeb}
               target='_blank'
-              class='flex items-center gap-1'><span><IconLink /></span> Visit Website</a
+              class='flex items-center gap-1'
+              ><span><IconLink /></span> Visit Website</a
             >
             <div class='my-5'>
-              <img
+              <Image
                 src={entry.data.heroImage}
                 width='1440'
                 height='800'
                 alt={entry.slug}
+                quality={'low'}
+                format={'avif'}
               />
             </div>
             <Content />
@@ -55,4 +63,3 @@ const title = `${entry.data.sortTitle} - Rifky Alamsyah`;
     </section>
   </main>
 </Layout>
-
