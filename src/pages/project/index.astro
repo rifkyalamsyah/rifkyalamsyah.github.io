@@ -1,10 +1,11 @@
 ---
 import Layout from '@layouts/MainLayout.astro';
 
+import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 const project = await getCollection('portfolio');
 
-// seo
+// SEO
 const title = 'Projects - Rifky Alamsyah';
 const seoDesc = 'Projects Rifky Alamsyah';
 ---
@@ -30,12 +31,14 @@ const seoDesc = 'Projects Rifky Alamsyah';
             project.map((projectPost) => (
               <div>
                 <a href={`/project/${projectPost.slug}`}>
-                  <img
+                  <Image
                     src={projectPost.data.heroImage}
                     width='480'
                     height='300'
                     alt={projectPost.slug}
                     class='rounded-xl'
+                    format={'avif'}
+                    quality={'low'}
                   />
                 </a>
                 <div class='mt-4 flex flex-wrap justify-between content-end'>
