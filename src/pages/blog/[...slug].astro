@@ -1,0 +1,45 @@
+---
+import Layout from '@layouts/MainLayout.astro';
+import IconBack from '@icons/caret-left.astro';
+import { formatDate } from '../../utils';
+
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+  const allBlogPost: CollectionEntry<'blog'>[] = await getCollection('blog');
+
+  return allBlogPost.map((entry) => ({
+    params: {
+      slug: entry.slug,
+    },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+// SEO
+const title = `${entry.data.title} - Rifky Alamsyah`;
+const seoDesc = `Read - ${entry.data.title}`;
+---
+
+<Layout {title} {seoDesc}>
+  <div class='container mx-auto'>
+    <div class='my-4'>
+      <a
+        href='/blog'
+        class='text-wood-400 hover:text-wood-800 dark:hover:text-white flex items-center'
+        ><span><IconBack /></span> Back to post</a
+      >
+    </div>
+    <hr class='border-wood-100/80 dark:border-wood-800/20 duration-1000' />
+    <article
+      class='mt-8 mx-auto prose lg:prose-xl dark:prose-invert prose-img:rounded-xl prose-a:no-underline hover:prose-a:underline prose-headings:text-wood-800 dark:prose-headings:text-wood-200 prose-p:text-wood-800 dark:prose-p:text-wood-300'
+    >
+      <p>{formatDate(entry.data.pubDate)}</p>
+      <Content />
+    </article>
+  </div>
+</Layout>
