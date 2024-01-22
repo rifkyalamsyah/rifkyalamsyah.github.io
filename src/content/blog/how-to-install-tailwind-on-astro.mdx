@@ -1,0 +1,68 @@
+---
+isDraft: true
+title: 'How to install Tailwind css on Astro js'
+tags: ['coding','astro']
+image: '/images/astro-cover.jpg'
+author: 'Rifky Alamsyah'
+pubDate: 2024-01-22
+slug: how-to-install-tailwind-css-on-astro-js
+---
+
+# Install Tailwind css on Astro js
+
+### Installation
+
+Astro includes an `astro add` command to automate the setup of official integrations.
+
+Run one of the following commands in a new terminal window.
+
+```
+npx astro add tailwind
+```
+
+### Usage
+
+When you install the integration, Tailwind’s utility classes should be ready to go right away.
+
+### Manual Installation
+
+First, install the `@astrojs/tailwind` and `tailwindcss` packages using your package manager.
+
+```
+npm install @astrojs/tailwind tailwindcss
+```
+
+Then, apply the integration to your Astro config file file using the `integrations` property:
+
+```
+# astro.config.mjs
+
+import { defineConfig } from 'astro/config';
+import tailwind from '@astrojs/tailwind';
+
+export default defineConfig({
+  // ...
+  integrations: [tailwind()],
+});
+```
+
+Then, create a `tailwind.config.mjs` file in your project’s root directory. You can use the following command to generate a basic configuration file for you:
+
+```
+npx tailwindcss init
+```
+
+Finally, add this basic configuration to your `tailwind.config.mjs` file:
+
+```JSX
+# tailwind.config.mjs
+
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
+```

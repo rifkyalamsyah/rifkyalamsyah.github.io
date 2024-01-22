@@ -10,10 +10,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.3.4",
-    "@astrojs/mdx": "^2.0.4",
+    "@astrojs/check": "^0.4.1",
+    "@astrojs/mdx": "^2.0.5",
     "@astrojs/tailwind": "^5.1.0",
-    "astro": "^4.1.1",
+    "astro": "^4.2.1",
     "astro-navbar": "^2.3.0",
     "astro-seo": "^0.8.0",
     "flowbite": "^2.2.1",
