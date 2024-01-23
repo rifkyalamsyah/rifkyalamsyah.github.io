@@ -3,6 +3,7 @@ import Layout from '@layouts/MainLayout.astro';
 import IconBack from '@icons/caret-left.astro';
 import { formatDate } from '../../utils';
 
+import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 
@@ -35,10 +36,13 @@ const seoDesc = `Read - ${entry.data.title}`;
       >
     </div>
     <hr class='border-wood-100/80 dark:border-wood-800/20 duration-1000' />
+
     <article
       class='mt-8 mx-auto prose lg:prose-xl dark:prose-invert prose-img:rounded-xl prose-a:no-underline hover:prose-a:underline prose-headings:text-wood-800 dark:prose-headings:text-wood-200 prose-p:text-wood-800 dark:prose-p:text-wood-300'
     >
+      <h1>{entry.data.title}</h1>
       <p>{formatDate(entry.data.pubDate)}</p>
+      <img src={entry.data.image} alt={entry.data.title} width={1024} height={400} />
       <Content />
     </article>
   </div>

@@ -1,5 +1,7 @@
 ---
 import Layout from '@layouts/MainLayout.astro';
+import { Image } from 'astro:assets';
+import { formatDate } from 'src/utils';
 
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
@@ -23,17 +25,31 @@ const seoDesc = 'Blog Post';
           Explore my insightful articles on my blog
         </p>
       </div>
-      <div class='flex flex-col gap-4'>
+      <div class='grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center mt-5'>
         {
           blog.map((blogPost) => (
             <ul>
               <li>
-                <a
-                  href={`/blog/${blogPost.slug}`}
-                  class='text-2xl text-wood-600 hover:text-wood-800 dark:text-wood-300 dark:hover:text-white'
-                >
-                  {blogPost.data.title}
+                <a href={`/blog/${blogPost.slug}`}>
+                  <img
+                    src={blogPost.data.image}
+                    alt={blogPost.slug}
+                    class='rounded-xl'
+                    width={800}
+                    height={400}
+                  />
                 </a>
+                <div class='text-wrapper mt-4'>
+                  <a
+                    href={`/blog/${blogPost.slug}`}
+                    class='text-2xl text-wood-600 hover:text-wood-800 dark:text-wood-300 dark:hover:text-white'
+                  >
+                    {blogPost.data.title}
+                  </a>
+                  <p class='text-sm text-gray-500 dark:text-gray-400'>
+                    {formatDate(blogPost.data.pubDate)}
+                  </p>
+                </div>
               </li>
             </ul>
           ))
