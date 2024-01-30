@@ -18,7 +18,7 @@ const seoDesc = 'Projects Rifky Alamsyah';
           <h1
             class='text-2xl md:text-4xl text-center text-wood-800 dark:text-wood-400'
           >
-            Projects
+          Projects
           </h1>
           <p class='mt-2 text-lg text-center text-gray-500 dark:text-gray-400'>
             Explore my portfolio, where passion and creativity <br class="hidden sm:block"/> converge to
@@ -30,7 +30,7 @@ const seoDesc = 'Projects Rifky Alamsyah';
         >
           {
             project.map((projectPost) => (
-              <div>
+              <div class="pb-5 bg-wood-50 dark:bg-wood-950 rounded-xl duration-1000">
                 <a href={`/project/${projectPost.slug}`}>
                   <Image
                     src={projectPost.data.image}
@@ -42,10 +42,10 @@ const seoDesc = 'Projects Rifky Alamsyah';
                     quality={'mid'}
                   />
                 </a>
-                <div class='mt-4 flex flex-wrap justify-between content-end'>
+                <div class='mt-4 px-3 lg:px-4 flex flex-wrap justify-between content-end'>
                   <a
                     href={`/project/${projectPost.slug}`}
-                    class='text-xl text-wood-600 hover:text-wood-800 dark:text-wood-300 dark:hover:text-white'
+                    class='text-lg text-wood-600 hover:text-wood-800 dark:text-wood-300 dark:hover:text-white line-clamp-1'
                   >
                     {projectPost.data.title} - {projectPost.data.category}
                   </a>
