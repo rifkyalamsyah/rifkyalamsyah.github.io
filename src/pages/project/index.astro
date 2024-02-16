@@ -30,7 +30,7 @@ const seoDesc = 'Projects Rifky Alamsyah';
         >
           {
             project.map((projectPost) => (
-              <div class="pb-5 bg-wood-50 dark:bg-wood-950 rounded-xl duration-1000">
+              <div class="pb-5 bg-wood-50 dark:bg-wood-950 border border-wood-100/60 dark:border-wood-800/30 rounded-xl duration-1000">
                 <a href={`/project/${projectPost.slug}`}>
                   <Image
                     src={projectPost.data.image}
