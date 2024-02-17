@@ -43,13 +43,16 @@ const domain = `rifkyalamsyah.github.io/project/${entry.slug}`;
           >
             <h1>{entry.data.title} - {entry.data.category}</h1>
             <p>{entry.data.desc}</p>
-            <a
-              href={entry.data.linkWeb}
-              target='_blank'
-              class='flex items-center gap-1'
-              ><span><IconLink /></span> Visit Website</a
-            >
-            <div class='my-5'>
+            <div class='flex mt-6'>
+              <a
+                href={entry.data.linkWeb}
+                target='_blank'
+                class='py-2 px-6 bg-indigo-500 hover:bg-indigo-600 rounded-full text-white text-base hover:no-underline'
+              >
+                Visit Website
+              </a>
+            </div>
+            <div class='my-5 hover:scale-[1.02] duration-700'>
               <Image
                 src={entry.data.image}
                 width={1024}
