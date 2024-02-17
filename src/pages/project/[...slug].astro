@@ -19,7 +19,7 @@ const { Content } = await entry.render();
 
 // SEO
 const title = `${entry.data.sortTitle} - Rifky Alamsyah`;
-const seoDesc = `${entry.data.sortTitle} Project`;
+const seoDesc = entry.data.desc;
 const ogImage = `https://rifkyalamsyah.github.io${entry.data.image}`;
 const url = `https://rifkyalamsyah.github.io/project/${entry.slug}`;
 const domain = `rifkyalamsyah.github.io/project/${entry.slug}`;
