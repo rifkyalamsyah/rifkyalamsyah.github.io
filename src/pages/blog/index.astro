@@ -1,18 +1,19 @@
 ---
 import Layout from '@layouts/MainLayout.astro';
-import { Image } from 'astro:assets';
 import { formatDate } from 'src/utils';
 
 import { getCollection } from 'astro:content';
-import type { CollectionEntry } from 'astro:content';
 const blog = await getCollection('blog');
 
 // SEO
 const title = 'Blog - Rifky Alamsyah';
-const seoDesc = 'Blog Post';
+const seoDesc = 'Explore my insightful articles';
+const ogImage = 'https://rifkyalamsyah.github.io/images/og/og-blog.png';
+const url = 'https://rifkyalamsyah.github.io/blog';
+const domain = 'rifkyalamsyah.github.io/blog';
 ---
 
-<Layout {title} {seoDesc}>
+<Layout {title} {seoDesc} {ogImage} {url} {domain}>
   <main>
     <div class='container mx-auto'>
       <div class='py-5'>

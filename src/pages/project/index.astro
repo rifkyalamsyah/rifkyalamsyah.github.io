@@ -7,10 +7,13 @@ const project = await getCollection('portfolio');
 
 // SEO
 const title = 'Projects - Rifky Alamsyah';
-const seoDesc = 'Projects Rifky Alamsyah';
+const seoDesc = 'Discover my portfolio';
+const ogImage = 'https://rifkyalamsyah.github.io/images/og/og-project.png';
+const url = 'https://rifkyalamsyah.github.io/project';
+const domain = 'rifkyalamsyah.github.io/project';
 ---
 
-<Layout {title} {seoDesc}>
+<Layout {title} {seoDesc} {ogImage} {url} {domain}>
   <main>
     <section>
       <div class='container mx-auto py-8'>
