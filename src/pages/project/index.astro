@@ -21,11 +21,12 @@ const domain = 'rifkyalamsyah.github.io/project';
           <h1
             class='text-2xl md:text-4xl text-center text-wood-800 dark:text-wood-400'
           >
-          Projects
+            Projects
           </h1>
           <p class='mt-2 text-lg text-center text-gray-500 dark:text-gray-400'>
-            Explore my portfolio, where passion and creativity <br class="hidden sm:block"/> converge to
-            shape enthralling visual narratives.
+            Explore my portfolio, where passion and creativity <br
+              class='hidden sm:block'
+            /> converge to shape enthralling visual narratives.
           </p>
         </div>
         <div
@@ -33,7 +34,7 @@ const domain = 'rifkyalamsyah.github.io/project';
         >
           {
             project.map((projectPost) => (
-              <div class="pb-5 bg-wood-50 dark:bg-wood-950 border border-wood-100/60 dark:border-wood-800/30 rounded-xl duration-1000">
+              <div class='pb-5 bg-wood-50 dark:bg-wood-950 border border-wood-100/60 dark:border-wood-800/30 rounded-xl hover:scale-[1.02] duration-1000'>
                 <a href={`/project/${projectPost.slug}`}>
                   <Image
                     src={projectPost.data.image}
@@ -45,7 +46,7 @@ const domain = 'rifkyalamsyah.github.io/project';
                     quality={'mid'}
                   />
                 </a>
-                <div class='mt-4 px-3 lg:px-4 flex flex-wrap justify-between content-end'>
+                <div class='mt-4 px-3 lg:px-4 flex flex-wrap justify-between content-end gap-1'>
                   <a
                     href={`/project/${projectPost.slug}`}
                     class='text-lg text-wood-600 hover:text-wood-800 dark:text-wood-300 dark:hover:text-white line-clamp-1'
@@ -54,7 +55,7 @@ const domain = 'rifkyalamsyah.github.io/project';
                   </a>
                   <a
                     href={projectPost.data.linkWeb}
-                    class='text-wood-400 hover:text-wood-600 dark:text-wood-600 dark:hover:text-wood-300 hover:underline flex items-center gap-1'
+                    class='py-1 px-3 bg-wood-100 dark:bg-wood-900 rounded-lg text-wood-400 hover:text-wood-600 dark:text-wood-600 dark:hover:text-wood-300 hover:underline flex items-center gap-1 duration-1000'
                     target='_blank'
                   >
                     Live Preview
