@@ -20,9 +20,12 @@ const { Content } = await entry.render();
 // SEO
 const title = `${entry.data.sortTitle} - Rifky Alamsyah`;
 const seoDesc = `${entry.data.sortTitle} Project`;
+const ogImage = `https://rifkyalamsyah.github.io${entry.data.image}`;
+const url = `https://rifkyalamsyah.github.io/project/${entry.slug}`;
+const domain = `rifkyalamsyah.github.io/project/${entry.slug}`;
 ---
 
-<Layout {title} {seoDesc}>
+<Layout {title} {seoDesc} {ogImage} {url} {domain}>
   <main>
     <section class='py-8'>
       <div class='container mx-auto'>

@@ -3,7 +3,7 @@ import Layout from '@layouts/MainLayout.astro';
 import IconBack from '@icons/caret-left.astro';
 import { formatDate } from '../../utils';
 
-import { Image } from 'astro:assets';
+
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 
@@ -24,9 +24,12 @@ const { Content } = await entry.render();
 // SEO
 const title = `${entry.data.title} - Rifky Alamsyah`;
 const seoDesc = `Read - ${entry.data.title}`;
+const ogImage = `https://rifkyalamsyah.github.io${entry.data.image}`;
+const url = `https://rifkyalamsyah.github.io/blog/${entry.slug}`;
+const domain = `rifkyalamsyah.github.io/blog/${entry.slug}`;
 ---
 
-<Layout {title} {seoDesc}>
+<Layout {title} {seoDesc} {ogImage} {url} {domain}>
   <div class='container mx-auto'>
     <div class='my-4'>
       <a
