@@ -35,7 +35,7 @@ const domain = 'rifkyalamsyah.github.io/blog';
         {
           blog.map((blogPost) => (
             <ul>
-              <li class='p-3 bg-wood-50 dark:bg-wood-950 border border-wood-100/60 dark:border-wood-800/30 rounded-xl duration-1000'>
+              <li class='p-1 lg:p-2 bg-wood-50 dark:bg-wood-950 border border-wood-100/60 dark:border-wood-800/30 rounded-xl duration-1000'>
                 <a href={`/blog/${blogPost.slug}`}>
                   <img
                     src={blogPost.data.image}
@@ -45,7 +45,7 @@ const domain = 'rifkyalamsyah.github.io/blog';
                     height={400}
                   />
                 </a>
-                <div class='text-wrapper mt-4 sm:px-2'>
+                <div class='text-wrapper mt-4 mb-3 px-2 sm:px-2'>
                   <a
                     href={`/blog/${blogPost.slug}`}
                     class='text-2xl text-wood-600 hover:text-wood-800 dark:text-wood-300 dark:hover:text-white line-clamp-1'
