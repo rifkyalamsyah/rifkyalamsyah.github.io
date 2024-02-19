@@ -3,7 +3,11 @@ import Layout from '@layouts/MainLayout.astro';
 import { formatDate } from 'src/utils';
 
 import { getCollection } from 'astro:content';
-const blog = await getCollection('blog');
+import type { CollectionEntry } from 'astro:content';
+const blog: CollectionEntry<'blog'>[] = (await getCollection('blog')).sort(
+  (a: CollectionEntry<'blog'>, b: CollectionEntry<'blog'>) =>
+    b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
 
 // SEO
 const title = 'Blog - Rifky Alamsyah';
@@ -27,7 +31,7 @@ const domain = 'rifkyalamsyah.github.io/blog';
           Explore my insightful articles.
         </p>
       </div>
-      <div class='grid md:grid-cols-2 gap-8 justify-center mt-5'>
+      <div class='grid md:grid-cols-2 gap-6 lg:gap-8 justify-center mt-5'>
         {
           blog.map((blogPost) => (
             <ul>

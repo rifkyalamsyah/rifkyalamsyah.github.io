@@ -3,7 +3,13 @@ import Layout from '@layouts/MainLayout.astro';
 
 import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
-const project = await getCollection('portfolio');
+import type { CollectionEntry } from 'astro:content';
+const project: CollectionEntry<'portfolio'>[] = (
+  await getCollection('portfolio')
+).sort(
+  (a: CollectionEntry<'portfolio'>, b: CollectionEntry<'portfolio'>) =>
+    b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
 
 // SEO
 const title = 'Projects - Rifky Alamsyah';
@@ -30,7 +36,7 @@ const domain = 'rifkyalamsyah.github.io/project';
           </p>
         </div>
         <div
-          class='grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center mt-5'
+          class='grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 justify-center mt-5'
         >
           {
             project.map((projectPost) => (
