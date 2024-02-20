@@ -2,11 +2,17 @@
 import Layout from '@layouts/MainLayout.astro';
 
 // SEO
-const title = 'About Me';
-const seoDesc = 'About Rifky Alamsyah';
+const title = 'About - Rifky Alamsyah';
+const seoDesc =
+  'UI Designer & Front-End Developer, I love solving problems and implementing ideas by design.';
+const ogImage = 'https://rifkyalamsyah.github.io/images/og/og-rifky.png';
+const url = 'https://rifkyalamsyah.github.io/about';
+const domain = 'rifkyalamsyah.github.io/about';
+const keywords =
+  'rifky, rifky alamsyah, ui designer , ui/ux designer, web designer, frontend developer, webflow developer, freelancer, rifky alamsyah freelance designer, rifky alamsyah ui designer, rifky alamsyah ui/ux designer, rifky alamsyah web designer, rifky alamsyah webflow developer, rifky alamsyah frontend developer';
 ---
 
-<Layout {title} {seoDesc}>
+<Layout {title} {seoDesc} {ogImage} {url} {domain} {keywords}>
   <main class='mt-auto'>
     <div class='relative h-full w-full bg-red'></div>
     <section>
@@ -16,7 +22,9 @@ const seoDesc = 'About Rifky Alamsyah';
           <div
             class='sm:col-span-3 bg-wood-50 dark:bg-wood-950 border border-wood-100/60 dark:border-wood-800/30 p-8 rounded-xl duration-1000'
           >
-            <h1 class='text-2xl text-wood-800 dark:text-white'>Rifky Alamsyah</h1>
+            <h1 class='text-2xl text-wood-800 dark:text-white'>
+              Rifky Alamsyah
+            </h1>
             <p class='text-lg text-gray-500 dark:text-gray-400'>
               UI Designer & Front-End Developer
             </p>
@@ -38,7 +46,6 @@ const seoDesc = 'About Rifky Alamsyah';
               src='https://open.spotify.com/embed/playlist/3TQNDr3NGXdbh6WRfrGuq5?utm_source=generator&theme=0'
               width='100%'
               height='152'
-              frameborder='0'
               allowfullscreen=''
               allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture'
               loading='lazy'></iframe>
@@ -63,7 +70,9 @@ const seoDesc = 'About Rifky Alamsyah';
           <div
             class='sm:col-start-3 lg:row-start-2 bg-wood-50 dark:bg-wood-950 border border-wood-100/60 dark:border-wood-800/30 p-8 rounded-xl duration-700'
           >
-            <h1 class='text-2xl text-wood-800 dark:text-white'>Digital Product</h1>
+            <h1 class='text-2xl text-wood-800 dark:text-white'>
+              Digital Product
+            </h1>
             <p class='text-gray-500 dark:text-gray-400'>
               Check out 3D Icon / Illustrations
             </p>
