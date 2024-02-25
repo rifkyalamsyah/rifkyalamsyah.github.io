@@ -5,27 +5,41 @@ import { ViewTransitions } from 'astro:transitions';
 
 <head>
   <meta charset='utf-8' />
-  <meta name="robots" content="index, follow">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name='robots' content='index, follow' />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
   <title>{title}</title>
-  <meta name="description" content={seoDesc}>
-  <meta name="keywords" content={keywords}>
-  <meta name="author" content="Rifky Alamsyah">
+  <meta name='description' content={seoDesc} />
+  <meta name='keywords' content={keywords} />
+  <meta name='author' content='Rifky Alamsyah' />
   <!-- og fb -->
-  <meta property="og:url" content={url}>
-  <meta property="og:type" content="website">
-  <meta property="og:title" content={title}>
-  <meta property="og:description" content={seoDesc}>
-  <meta property="og:image" content={ogImage}>
+  <meta property='og:url' content={url} />
+  <meta property='og:type' content='website' />
+  <meta property='og:title' content={title} />
+  <meta property='og:description' content={seoDesc} />
+  <meta property='og:image' content={ogImage} />
   <!-- og x -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta property="twitter:domain" content={domain}>
-  <meta property="twitter:url" content={url}>
-  <meta name="twitter:title" content={title}>
-  <meta name="twitter:description" content={seoDesc}>
-  <meta name="twitter:image" content={ogImage}>
+  <meta name='twitter:card' content='summary_large_image' />
+  <meta property='twitter:domain' content={domain} />
+  <meta property='twitter:url' content={url} />
+  <meta name='twitter:title' content={title} />
+  <meta name='twitter:description' content={seoDesc} />
+  <meta name='twitter:image' content={ogImage} />
   <!-- favicon -->
   <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+  <!-- Google Tag Manager -->
+  <script is:inline>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-NKD2W7FQ');
+  </script>
+  <!-- End Google Tag Manager -->
   <!-- gfonts -->
   <link rel='preconnect' href='https://fonts.googleapis.com' />
   <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
