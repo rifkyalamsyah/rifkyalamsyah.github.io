@@ -6,16 +6,33 @@ const { title, seoDesc, ogImage, url, domain, keywords } = Astro.props;
 ---
 
 <html lang='en' class=''>
-  <Head title={title} seoDesc={seoDesc} ogImage={ogImage} url={url} domain={domain} keywords={keywords} />
-  <body class='dark:bg-wood-900 duration-1000 dark:text-white flex flex-col content-between min-h-screen'>
+  <Head
+    title={title}
+    seoDesc={seoDesc}
+    ogImage={ogImage}
+    url={url}
+    domain={domain}
+    keywords={keywords}
+  />
+  <body
+    class='dark:bg-wood-900 duration-1000 dark:text-white flex flex-col content-between min-h-screen'
+  >
     <Nav />
     <slot />
     <Footer />
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src='https://www.googletagmanager.com/ns.html?id=GTM-NKD2W7FQ'
+        height='0'
+        width='0'
+        style='display:none;visibility:hidden'></iframe></noscript
+    >
+    <!-- End Google Tag Manager (noscript) -->
+    <style is:global>
+      html {
+        font-family: 'DM Sans', sans-serif;
+      }
+    </style>
   </body>
 </html>
-
-<style is:global>
-  html {
-    font-family: 'DM Sans', sans-serif;
-  }
-</style>
