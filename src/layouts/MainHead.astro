@@ -26,6 +26,18 @@ import { ViewTransitions } from 'astro:transitions';
   <meta name='twitter:image' content={ogImage} />
   <!-- favicon -->
   <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+  <!-- Google tag (gtag.js) -->
+  <script async src='https://www.googletagmanager.com/gtag/js?id=G-JYQBQ2PS3X'
+  ></script>
+  <script is:inline>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-JYQBQ2PS3X');
+  </script>
   <!-- Google Tag Manager -->
   <script is:inline>
     (function (w, d, s, l, i) {
