@@ -1,0 +1,54 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { formatDate } from 'src/utils';
+
+const { article } = Astro.props;
+
+interface Props {
+  article: CollectionEntry<'blog'>;
+}
+---
+
+<div
+  class='p-1 lg:p-4 bg-wood-50 dark:bg-wood-950 border border-wood-100/60 dark:border-wood-800/30 flex flex-col lg:flex-row justify-around gap-4 lg:gap-8 rounded-xl duration-1000'
+>
+  <div
+    class='xl:pl-8 px-2 pb-3 flex flex-col justify-center order-2 lg:order-1'
+  >
+    <div class='mb-2 lg:mb-4 flex'>
+      <p
+        class='py-1 px-4 bg-wood-100 dark:bg-wood-800/30 text-wood-600 dark:text-white rounded-full duration-1000'
+      >
+        Latest post ✨
+      </p>
+    </div>
+    <a href=`blog/${article.slug}`>
+      <h1
+        class='text-2xl lg:text-3xl text-wood-600 hover:text-wood-800 dark:text-wood-300 dark:hover:text-white line-clamp-2'
+      >
+        {article.data.title}
+      </h1>
+    </a>
+    <p class='lg:mt-2 text-sm text-gray-500 dark:text-gray-400'>
+      {formatDate(article.data.pubDate)}
+    </p>
+    <div class='flex lg:mt-6'>
+      <a
+        href=`blog/${article.slug}`
+        class='hidden lg:block py-1 px-3 bg-wood-100 dark:bg-wood-900 rounded-lg text-wood-500 dark:text-wood-400 hover:text-wood-900 dark:hover:text-wood-100 hover:underline items-center duration-1000'
+        >Read More</a
+      >
+    </div>
+  </div>
+  <div class='order-1 lg:orde-2 lg:max-w-lg xl:max-w-2xl'>
+    <a href=`blog/${article.slug}` class='mt-8'
+      ><img
+        src={article.data.image}
+        class='rounded-xl'
+        alt='img-astro'
+        width={700}
+        height={400}
+      /></a
+    >
+  </div>
+</div>
