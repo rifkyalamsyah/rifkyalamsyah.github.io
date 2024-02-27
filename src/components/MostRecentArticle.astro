@@ -22,7 +22,7 @@ interface Props {
         Latest post ✨
       </p>
     </div>
-    <a href=`blog/${article.slug}`>
+    <a href=`/blog/${article.slug}`>
       <h1
         class='text-2xl lg:text-3xl text-wood-600 hover:text-wood-800 dark:text-wood-300 dark:hover:text-white line-clamp-2'
       >
@@ -34,14 +34,14 @@ interface Props {
     </p>
     <div class='flex lg:mt-6'>
       <a
-        href=`blog/${article.slug}`
+        href=`/blog/${article.slug}`
         class='hidden lg:block py-1 px-3 bg-wood-100 dark:bg-wood-900 rounded-lg text-wood-500 dark:text-wood-400 hover:text-wood-900 dark:hover:text-wood-100 hover:underline items-center duration-1000'
         >Read More</a
       >
     </div>
   </div>
   <div class='order-1 lg:orde-2 lg:max-w-lg xl:max-w-2xl'>
-    <a href=`blog/${article.slug}` class='mt-8'
+    <a href=`/blog/${article.slug}` class='mt-8'
       ><img
         src={article.data.image}
         class='rounded-xl'
