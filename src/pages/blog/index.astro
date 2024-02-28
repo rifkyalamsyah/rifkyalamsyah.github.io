@@ -28,7 +28,7 @@ const domain = 'rifkyalamsyah.github.io/blog';
       <div class='py-6'>
         <div class='flex justify-center'>
           <div
-            class='bg-wood-50 dark:bg-wood-950 border border-wood-100 dark:border-wood-800/50 py-1 px-4 rounded-full duration-1000'
+            class='bg-wood-50 dark:bg-wood-950/50 border border-wood-100 dark:border-wood-800/50 py-1 px-4 rounded-full duration-1000'
           >
             <h1
               class='text-lg md:text-xl text-center text-wood-600 dark:text-wood-400'
@@ -45,13 +45,11 @@ const domain = 'rifkyalamsyah.github.io/blog';
 
       <MostRecentCard article={mostRecentArticle} />
 
-      <div
-        class='grid lg:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-6 justify-center mt-5'
-      >
+      <div class='grid lg:grid-cols-2 xl:grid-cols-3 gap-4 justify-center mt-4'>
         {
           otherArticles.slice(0).map((blogPost) => (
             <ul>
-              <li class='p-1 lg:p-2 bg-wood-50 dark:bg-wood-950 border border-wood-100/60 dark:border-wood-800/30 rounded-xl duration-1000'>
+              <li class='p-1 lg:p-2 bg-wood-50 dark:bg-wood-950/50 border border-wood-100/60 dark:border-wood-800/30 rounded-xl duration-1000'>
                 <a href={`/blog/${blogPost.slug}`}>
                   <img
                     src={blogPost.data.image}
@@ -64,12 +62,12 @@ const domain = 'rifkyalamsyah.github.io/blog';
                 <div class='text-wrapper mt-4 mb-3 px-2 sm:px-3'>
                   <a
                     href={`/blog/${blogPost.slug}`}
-                    class='text-2xl text-wood-600 hover:text-wood-800 dark:text-wood-300 dark:hover:text-white line-clamp-1'
+                    class='text-xl text-wood-600 hover:text-wood-800 dark:text-wood-300 dark:hover:text-white line-clamp-1'
                   >
                     {blogPost.data.title}
                   </a>
                   <p class='text-sm text-gray-500 dark:text-gray-400'>
-                    {formatDate(blogPost.data.pubDate)}
+                    {blogPost.data.readingTime} min read - {formatDate(blogPost.data.pubDate)}
                   </p>
                 </div>
               </li>

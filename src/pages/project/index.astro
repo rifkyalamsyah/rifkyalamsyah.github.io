@@ -25,7 +25,7 @@ const domain = 'rifkyalamsyah.github.io/project';
       <div class='container mx-auto py-8'>
         <div class='py-6'>
           <div class='flex justify-center'>
-            <div class='bg-wood-50 dark:bg-wood-950 border border-wood-100 dark:border-wood-800/50 py-1 px-4 rounded-full duration-1000'>
+            <div class='bg-wood-50 dark:bg-wood-950/50 border border-wood-100 dark:border-wood-800/50 py-1 px-4 rounded-full duration-1000'>
               <h1
                 class='text-lg md:text-xl text-center text-wood-600 dark:text-wood-400'
               >
@@ -40,11 +40,11 @@ const domain = 'rifkyalamsyah.github.io/project';
           </p>
         </div>
         <div
-          class='grid md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 justify-center mt-5'
+          class='grid md:grid-cols-2 lg:grid-cols-3 gap-4 justify-center mt-4'
         >
           {
             project.map((projectPost) => (
-              <div class='pb-5 bg-wood-50 dark:bg-wood-950 border border-wood-100/60 dark:border-wood-800/30 rounded-xl duration-1000'>
+              <div class='pb-5 bg-wood-50 dark:bg-wood-950/50 border border-wood-100/60 dark:border-wood-800/30 rounded-xl duration-1000'>
                 <a href={`/project/${projectPost.slug}`}>
                   <Image
                     src={projectPost.data.image}
@@ -61,7 +61,7 @@ const domain = 'rifkyalamsyah.github.io/project';
                     href={`/project/${projectPost.slug}`}
                     class='text-lg text-wood-600 hover:text-wood-900 dark:text-wood-300 dark:hover:text-white line-clamp-1'
                   >
-                    {projectPost.data.title} - {projectPost.data.category}
+                    {projectPost.data.title}
                   </a>
                   <a
                     href={projectPost.data.linkWeb}
