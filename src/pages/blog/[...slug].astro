@@ -40,10 +40,12 @@ const domain = `rifkyalamsyah.github.io/blog/${entry.slug}`;
     <hr class='border-wood-100/80 dark:border-wood-800/20 duration-1000' />
 
     <article
-      class='mt-8 mx-auto prose lg:prose-xl dark:prose-invert prose-img:rounded-xl prose-a:no-underline hover:prose-a:underline prose-headings:text-wood-800 dark:prose-headings:text-wood-200 prose-headings:mb-4 prose-p:my-4 prose-img:my-5 prose-p:text-wood-800 dark:prose-p:text-wood-300 prose-blockquote:text-base prose-blockquote:text-wood-800 prose-blockquote:border-l-wood-300 dark:prose-blockquote:border-l-wood-800 marker:text-wood-400 dark:marker:text-wood-400 dark:prose-blockquote:text-wood-300 prose-pre:!bg-wood-900 dark:prose-pre:!bg-wood-950 prose-hr:border-wood-100/80 dark:prose-hr:border-wood-800/40 prose-h1:text-4xl prose-h2:text-3xl prose-h3:text-2xl prose-h4:text-xl prose-p:text-lg prose-li:text-lg duration-700'
+      class='mt-8 mx-auto prose lg:prose-xl dark:prose-invert prose-img:rounded-xl prose-a:no-underline hover:prose-a:underline prose-headings:text-wood-800 dark:prose-headings:text-wood-200 prose-headings:mb-4 prose-p:my-4 prose-img:my-6 prose-p:text-wood-800 dark:prose-p:text-wood-300 prose-blockquote:text-base prose-blockquote:text-wood-800 prose-blockquote:border-l-wood-300 dark:prose-blockquote:border-l-wood-800 marker:text-wood-400 dark:marker:text-wood-400 dark:prose-blockquote:text-wood-300 prose-pre:!bg-wood-900 dark:prose-pre:!bg-wood-950 prose-hr:border-wood-100/80 dark:prose-hr:border-wood-800/40 prose-h1:text-4xl prose-h2:text-3xl prose-h3:text-2xl prose-h4:text-xl prose-p:text-lg prose-li:text-lg duration-700'
     >
       <h1>{entry.data.title}</h1>
-      <p>{formatDate(entry.data.pubDate)}</p>
+      <p>
+        Published on {formatDate(entry.data.pubDate)}
+      </p>
       <img
         src={entry.data.image}
         alt={entry.data.title}

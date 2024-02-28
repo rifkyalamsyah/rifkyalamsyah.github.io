@@ -20,6 +20,7 @@ const blogCollection = defineCollection({
     image: z.string().optional(),
     author: z.string().default('Anonymous'),
     pubDate: z.date(),
+    readingTime: z.string(),
   }),
 });
 
