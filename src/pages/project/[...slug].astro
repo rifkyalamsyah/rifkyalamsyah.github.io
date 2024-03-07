@@ -2,14 +2,16 @@
 import Layout from '@layouts/MainLayout.astro';
 import IconBack from '@components/icons/caret-left.astro';
 
-import { Image } from 'astro:assets';
-import { Picture } from 'astro:assets';
+import { Image, Picture } from 'astro:assets';
 import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
   const projects = await getCollection('portfolio');
+
   return projects.map((entry) => ({
-    params: { slug: entry.slug },
+    params: {
+      slug: entry.slug,
+    },
     props: { entry },
   }));
 }
@@ -39,7 +41,7 @@ const domain = `rifkyalamsyah.github.io/project/${entry.slug}`;
         <hr class='border-wood-100/80 dark:border-wood-800/20 duration-1000' />
         <div class='flex flex-col justify-center'>
           <article
-            class='mt-8 mx-auto prose lg:prose-xl dark:prose-invert prose-img:rounded-xl prose-a:no-underline hover:prose-a:underline prose-headings:text-wood-800 dark:prose-headings:text-wood-200 prose-headings:mb-4 prose-p:my-4 prose-img:my-6 prose-p:text-wood-800 dark:prose-p:text-wood-300 prose-blockquote:text-base prose-blockquote:text-wood-800 prose-blockquote:border-l-wood-300 dark:prose-blockquote:border-l-wood-800 marker:text-wood-400 dark:marker:text-wood-400 dark:prose-blockquote:text-wood-300 prose-pre:!bg-wood-900 dark:prose-pre:!bg-wood-950 prose-hr:border-wood-100/80 dark:prose-hr:border-wood-800/40 prose-h1:text-4xl prose-h2:text-3xl prose-h3:text-2xl prose-h4:text-xl prose-p:text-lg prose-li:text-lg   prose-ol:my-4 prose-ul:my-4 duration-700'
+            class='mt-8 mx-auto prose lg:prose-xl dark:prose-invert prose-img:rounded-xl prose-a:no-underline hover:prose-a:underline prose-headings:text-wood-800 dark:prose-headings:text-wood-200 prose-headings:mb-4 prose-p:my-4 prose-img:my-6 prose-p:text-wood-800 dark:prose-p:text-wood-300 prose-blockquote:text-base prose-blockquote:text-wood-800 prose-blockquote:border-l-wood-300 dark:prose-blockquote:border-l-wood-800 marker:text-wood-400 dark:marker:text-wood-400 dark:prose-blockquote:text-wood-300 prose-pre:!bg-wood-900 dark:prose-pre:!bg-wood-950 prose-hr:border-wood-100/80 dark:prose-hr:border-wood-800/40 prose-h1:text-4xl prose-h2:text-3xl prose-h3:text-2xl prose-h4:text-xl prose-p:text-lg prose-li:text-lg prose-ol:my-4 prose-ul:my-4 duration-700'
           >
             <h1>{entry.data.sortTitle} - {entry.data.category}</h1>
             <p>{entry.data.desc}</p>
@@ -55,10 +57,10 @@ const domain = `rifkyalamsyah.github.io/project/${entry.slug}`;
             <div class='my-5 duration-700'>
               <Picture
                 src={entry.data.image}
-                width={1024}
-                height={600}
                 alt={entry.slug}
-                formats={['avif', 'webp']}
+                width={1280}
+                height={720}
+                formats={['avif','webp']}
                 quality={'mid'}
               />
             </div>

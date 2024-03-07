@@ -3,10 +3,11 @@ import { z, defineCollection } from 'astro:content';
 // project
 const projectCollection = defineCollection({
   type: 'content',
-  schema: z.object({
-    title: z.string(),
-    image: z.string().optional(),
-  }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      image: image(),
+    }),
 });
 
 // blog
@@ -17,7 +18,7 @@ const blogCollection = defineCollection({
       title: z.string(),
       category: z.string(),
       image: image(),
-      imageUrl: z.string().optional(),
+      imageUrl: z.string(),
       author: z.string().default('Anonymous'),
       pubDate: z.date(),
       readingTime: z.string(),
