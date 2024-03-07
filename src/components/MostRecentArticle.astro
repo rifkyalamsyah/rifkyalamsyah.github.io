@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import { formatDate } from 'src/utils';
+import { Image, Picture } from 'astro:assets';
 
 const { article } = Astro.props;
 
@@ -10,16 +11,31 @@ interface Props {
 ---
 
 <div
-  class='mt-2 p-1 lg:p-4 bg-wood-50 dark:bg-wood-950/50 border border-wood-100/60 dark:border-wood-800/30 flex flex-col lg:flex-row justify-around gap-4 lg:gap-8 rounded-xl duration-1000'
+  class='mt-2 p-1 lg:p-4 bg-wood-50 dark:bg-wood-950/50 border border-wood-100/60 dark:border-wood-800/30 flex flex-col lg:flex-row justify-center gap-4 lg:gap-8 rounded-xl duration-1000'
 >
-  <div
-    class='xl:pl-8 px-2 pb-3 flex flex-col justify-center order-2 lg:order-1'
-  >
-    <div class='mb-2 lg:mb-4 flex'>
+  <!-- image -->
+  <div class='order-1 lg:orde-2 lg:max-w-lg xl:max-w-2xl'>
+    <a href=`/blog/${article.slug}`
+      ><Picture
+        src={article.data.image}
+        class='rounded-xl lg:max-w-lg'
+        alt='last-post-image'
+        formats={['avif', 'webp']}
+      /></a
+    >
+  </div>
+  <!-- title -->
+  <div class='px-2 pb-3 flex flex-col justify-center order-2 lg:order-1'>
+    <div class='mb-2 lg:mb-4 flex gap-2'>
       <p
-        class='py-2 px-4 text-xs bg-wood-100 dark:bg-wood-800/30 text-wood-800 dark:text-white rounded-full duration-1000'
+        class='px-4 py-1 bg-wood-100 dark:bg-wood-800/30 text-xs text-wood-800 dark:text-wood-200 border border-wood-200/50 dark:border-wood-800/50 rounded-full duration-1000'
       >
         Latest post ✨
+      </p>
+      <p
+        class='px-4 py-1 bg-wood-100/90 dark:bg-wood-800/30 text-xs text-wood-800 dark:text-wood-200 border border-wood-200/50 dark:border-wood-800/50 rounded-full duration-1000'
+      >
+        {article.data.category}
       </p>
     </div>
     <a href=`/blog/${article.slug}`>
@@ -39,16 +55,5 @@ interface Props {
         >Read More</a
       >
     </div>
-  </div>
-  <div class='order-1 lg:orde-2 lg:max-w-lg xl:max-w-2xl'>
-    <a href=`/blog/${article.slug}`
-      ><img
-        src={article.data.image}
-        class='rounded-xl'
-        alt='img-astro'
-        width={700}
-        height={400}
-      /></a
-    >
   </div>
 </div>

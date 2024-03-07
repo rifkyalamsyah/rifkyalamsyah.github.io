@@ -12,14 +12,16 @@ const projectCollection = defineCollection({
 // blog
 const blogCollection = defineCollection({
   type: 'content',
-  schema: z.object({
-    isDraft: z.boolean(),
-    title: z.string(),
-    image: z.string().optional(),
-    author: z.string().default('Anonymous'),
-    pubDate: z.date(),
-    readingTime: z.string(),
-  }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      category: z.string(),
+      image: image(),
+      imageUrl: z.string().optional(),
+      author: z.string().default('Anonymous'),
+      pubDate: z.date(),
+      readingTime: z.string(),
+    }),
 });
 
 export const collections = {
