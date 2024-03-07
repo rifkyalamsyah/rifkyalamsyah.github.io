@@ -58,19 +58,27 @@ const domain = 'rifkyalamsyah.github.io/project';
                     quality={'mid'}
                   />
                 </a>
-                <div class='mt-4 px-3 lg:px-4 flex flex-wrap justify-between content-end gap-1'>
+                <div class='mt-4 px-3 lg:px-4 flex flex-wrap'>
                   <a
                     href={`/project/${projectPost.slug}`}
                     class='text-lg text-wood-800 hover:text-wood-900 dark:text-wood-300 dark:hover:text-white line-clamp-1'
                   >
                     {projectPost.data.title}
                   </a>
+                </div>
+                <div class='mt-2 px-3 lg:px-4 flex gap-3'>
+                  <a
+                    href={`/project/${projectPost.slug}`}
+                    class='py-1 px-3 text-sm text-wood-500  dark:text-wood-500 hover:text-wood-900 dark:hover:text-wood-200 bg-wood-100 dark:bg-wood-900 rounded-lg hover:underline flex items-center gap-1 duration-1000'
+                  >
+                    Case Study
+                  </a>
                   <a
                     href={projectPost.data.linkWeb}
-                    class='py-1 px-3  text-wood-500  dark:text-wood-500 hover:text-wood-900 dark:hover:text-wood-200 bg-wood-100 dark:bg-wood-900 rounded-lg hover:underline flex items-center gap-1 duration-1000'
+                    class='py-1 px-3 text-sm text-wood-500  dark:text-wood-500 hover:text-wood-900 dark:hover:text-wood-200 bg-wood-100 dark:bg-wood-900 rounded-lg hover:underline flex items-center gap-1 duration-1000'
                     target='_blank'
                   >
-                    Live Preview
+                    Visit Website
                   </a>
                 </div>
               </div>
