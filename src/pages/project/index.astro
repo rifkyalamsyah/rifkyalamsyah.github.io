@@ -1,7 +1,7 @@
 ---
 import Layout from '@layouts/MainLayout.astro';
+import { Image, Picture } from 'astro:assets';
 
-import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 const project: CollectionEntry<'portfolio'>[] = (
@@ -48,13 +48,13 @@ const domain = 'rifkyalamsyah.github.io/project';
             project.map((projectPost) => (
               <div class='pb-5 bg-wood-50 dark:bg-wood-950/50 border border-wood-100/60 dark:border-wood-800/30 rounded-xl duration-1000'>
                 <a href={`/project/${projectPost.slug}`}>
-                  <Image
+                  <Picture
                     src={projectPost.data.image}
-                    width={800}
-                    height={400}
                     alt={projectPost.slug}
                     class='rounded-xl'
-                    format={'webp'}
+                    width={1280}
+                    height={700}
+                    formats={['avif', 'webp']}
                     quality={'mid'}
                   />
                 </a>
