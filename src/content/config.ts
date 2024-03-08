@@ -1,4 +1,4 @@
-import { rssSchema } from '@astrojs/rss';
+import { boolean } from 'astro/zod';
 import { z, defineCollection } from 'astro:content';
 
 // project
@@ -7,6 +7,9 @@ const projectCollection = defineCollection({
   schema: ({ image }) =>
     z.object({
       title: z.string(),
+      desc: z.string(),
+      pubDate: z.date(),
+      category: z.string(),
       image: image(),
     }),
 });
@@ -17,12 +20,15 @@ const blogCollection = defineCollection({
   schema: ({ image }) =>
     z.object({
       title: z.string(),
+      desc: z.string(),
+      pubDate: z.date(),
       category: z.string(),
       image: image(),
       imageUrl: z.string(),
       author: z.string().default('Anonymous'),
-      pubDate: z.date(),
       readingTime: z.string(),
+      featured: z.boolean().optional(),
+      draft: z.boolean().optional(),
     }),
 });
 
