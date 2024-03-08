@@ -10,6 +10,31 @@ const url = 'https://rifkyalamsyah.github.io/about';
 const domain = 'rifkyalamsyah.github.io/about';
 const keywords =
   'rifky, rifky alamsyah, ui designer , ui/ux designer, web designer, frontend developer, webflow developer, freelancer, rifky alamsyah freelance designer, rifky alamsyah ui designer, rifky alamsyah ui/ux designer, rifky alamsyah web designer, rifky alamsyah webflow developer, rifky alamsyah frontend developer';
+
+// data
+const about = {
+  name: 'Rifky Alamsyah',
+  desc: 'UI Designer & Front-End Web Developer, based in Indonesia 🇮🇩',
+  resumeUrl: 'https://read.cv/rifkyalamsyah',
+};
+
+const blog = {
+  title: 'Blog',
+  desc: 'Read my insightful articles.',
+  url: '/blog',
+};
+
+const project = {
+  title: 'Projects',
+  desc: 'Explore my portfolio.',
+  url: '/project',
+};
+
+const product = {
+  title: 'Digital Product',
+  desc: 'Check out 3D Icon / Illustrations.',
+  url: 'http://rifky.gumroad.com/',
+};
 ---
 
 <Layout {title} {seoDesc} {ogImage} {url} {domain} {keywords}>
@@ -23,14 +48,14 @@ const keywords =
             class='lg:col-span-3 bg-wood-50 dark:bg-wood-950 border border-wood-100/60 dark:border-wood-800/30 p-8 rounded-xl duration-1000'
           >
             <h1 class='text-2xl text-wood-900 dark:text-white'>
-              Rifky Alamsyah
+              {about.name}
             </h1>
             <p class='text-lg text-gray-600 dark:text-gray-400'>
-              UI Designer & Front-End Web Developer, based in Indonesia 🇮🇩
+              {about.desc}
             </p>
             <div class='flex mt-3'>
               <a
-                href='http://read.cv/rifkyalamsyah'
+                href={about.resumeUrl}
                 class='py-1 px-3 bg-wood-100 dark:bg-wood-900 rounded-lg text-wood-500 dark:text-wood-400 hover:text-wood-900 dark:hover:text-wood-100 hover:underline flex items-center gap-1 duration-1000'
                 target='_blank'
                 rel='noopener noreferrer'>Resume</a
@@ -41,6 +66,7 @@ const keywords =
           <div
             class='lg:col-start-4 bg-wood-50 dark:bg-wood-950 border border-wood-100/60 dark:border-wood-800/30 p-1 rounded-xl duration-700'
           >
+          <!-- spotify -->
             <iframe
               style='border-radius:12px'
               src='https://open.spotify.com/embed/playlist/3TQNDr3NGXdbh6WRfrGuq5?utm_source=generator&theme=0'
@@ -54,13 +80,15 @@ const keywords =
           <div
             class='lg:col-span-2 lg:row-start-2 bg-wood-50 dark:bg-wood-950 border border-wood-100/60 dark:border-wood-800/30 p-8 rounded-xl duration-700'
           >
-            <h1 class='text-2xl text-wood-900 dark:text-white'>Project</h1>
+            <h1 class='text-2xl text-wood-900 dark:text-white'>
+              {project.title}
+            </h1>
             <p class='text-gray-600 dark:text-gray-400'>
-              Explore my portfolio.
+              {project.desc}
             </p>
             <div class='mt-3 flex'>
               <a
-                href='/project'
+                href={project.url}
                 class='py-1 px-3 bg-wood-100 dark:bg-wood-900 rounded-lg text-wood-500 dark:text-wood-400 hover:text-wood-900 dark:hover:text-wood-100 hover:underline flex items-center gap-1 duration-1000'
                 >See Portfolio</a
               >
@@ -71,14 +99,14 @@ const keywords =
             class='lg:col-start-3 lg:row-start-2 bg-wood-50 dark:bg-wood-950 border border-wood-100/60 dark:border-wood-800/30 p-8 rounded-xl duration-700'
           >
             <h1 class='text-2xl text-wood-900 dark:text-white'>
-              Digital Product
+              {product.title}
             </h1>
             <p class='text-gray-600 dark:text-gray-400'>
-              Check out 3D Icon / Illustrations
+              {product.desc}
             </p>
             <div class='mt-3 flex'>
               <a
-                href='http://rifky.gumroad.com'
+                href={product.url}
                 class='py-1 px-3 bg-wood-100 dark:bg-wood-900 rounded-lg text-wood-500 dark:text-wood-400 hover:text-wood-900 dark:hover:text-wood-100 hover:underline flex items-center gap-1 duration-1000'
                 target='_blank'
                 rel='noopener noreferrer'>Discover</a
@@ -89,9 +117,9 @@ const keywords =
           <div
             class='lg:col-start-4 lg:row-start-2 bg-wood-50 dark:bg-wood-950 border border-wood-100/60 dark:border-wood-800/30 p-8 rounded-xl duration-700'
           >
-            <h1 class='text-2xl text-wood-900 dark:text-white'>Blog</h1>
+            <h1 class='text-2xl text-wood-900 dark:text-white'>{blog.title}</h1>
             <p class='text-gray-600 dark:text-gray-400'>
-              Read my insightful articles.
+              {blog.desc}
             </p>
             <div class='mt-3 flex'>
               <a
