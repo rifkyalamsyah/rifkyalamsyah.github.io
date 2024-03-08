@@ -24,6 +24,13 @@ import { ViewTransitions } from 'astro:transitions';
   <meta name='twitter:title' content={title} />
   <meta name='twitter:description' content={seoDesc} />
   <meta name='twitter:image' content={ogImage} />
+  <!-- rrs -->
+  <link
+    rel='alternate'
+    type='application/rss+xml'
+    title={title}
+    href={`${Astro.site}rss.xml`}
+  />
   <!-- favicon -->
   <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
   <!-- Google tag (gtag.js) -->
