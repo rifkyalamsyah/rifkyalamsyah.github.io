@@ -1,4 +1,4 @@
-import rss, { pagesGlobToRssItems } from '@astrojs/rss';
+import rss from '@astrojs/rss';
 import { getCollection } from 'astro:content';
 
 export async function GET(context) {
@@ -9,9 +9,9 @@ export async function GET(context) {
     site: context.site,
     items: blog.map((post) => ({
       title: post.data.title,
+      description: post.data.desc,
       pubDate: post.data.pubDate,
-      category: post.data.category,
-      link: `blog/${slug}/`,
+      link: `blog/${post.slug}/`,
     })),
   });
 }
