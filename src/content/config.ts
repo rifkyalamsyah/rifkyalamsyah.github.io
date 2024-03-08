@@ -1,3 +1,4 @@
+import { rssSchema } from '@astrojs/rss';
 import { z, defineCollection } from 'astro:content';
 
 // project
