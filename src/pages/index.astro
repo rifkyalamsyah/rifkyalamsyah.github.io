@@ -3,16 +3,17 @@ import Layout from '@layouts/MainLayout.astro';
 import Hi from '@components/Hi.astro';
 
 // SEO
-const title = 'Rifky Alamsyah - UI Designer & Frontend Dev';
-const seoDesc = 'I love solving problems and implementing ideas by design.';
-const ogImage = 'https://rifkyalamsyah.github.io/images/og/og-rifky.png';
-const url = 'https://rifkyalamsyah.github.io';
-const domain = 'rifkyalamsyah.github.io';
-const keywords =
-  'rifky, rifky alamsyah, ui designer , ui/ux designer, web designer, frontend developer, webflow developer, freelancer, rifky alamsyah freelance designer, rifky alamsyah ui designer, rifky alamsyah ui/ux designer, rifky alamsyah web designer, rifky alamsyah webflow developer, rifky alamsyah frontend developer';
+import { HOME_PAGE_SEO } from '@config';
 ---
 
-<Layout {title} {seoDesc} {ogImage} {url} {domain} {keywords}>
+<Layout
+  title={HOME_PAGE_SEO.title}
+  seoDesc={HOME_PAGE_SEO.seoDesc}
+  ogImage={HOME_PAGE_SEO.ogImage}
+  url={HOME_PAGE_SEO.url}
+  doamin={HOME_PAGE_SEO.domain}
+  keywords={HOME_PAGE_SEO.keywords}
+>
   <main class='mt-auto'>
     <div class='relative h-full w-full bg-white'></div>
   </main>

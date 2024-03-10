@@ -3,7 +3,7 @@ import Layout from '@layouts/MainLayout.astro';
 import { formatDate } from 'src/utils';
 import { Picture } from 'astro:assets';
 
-import MostRecentCard from '@components/MostRecentArticle.astro';
+import MostRecentCard from '@components/blog/MostRecentArticle.astro';
 
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
@@ -16,14 +16,16 @@ const mostRecentArticle: CollectionEntry<'blog'> = blog[0];
 const otherArticles: CollectionEntry<'blog'>[] = blog.slice(1);
 
 // SEO
-const title = 'Blog - Rifky Alamsyah';
-const seoDesc = 'Explore my insightful articles';
-const ogImage = 'https://rifkyalamsyah.github.io/images/og/og-blog.png';
-const url = 'https://rifkyalamsyah.github.io/blog';
-const domain = 'rifkyalamsyah.github.io/blog';
+import { BLOG_PAGE_SEO } from '@config';
 ---
 
-<Layout {title} {seoDesc} {ogImage} {url} {domain}>
+<Layout
+  title={BLOG_PAGE_SEO.title}
+  seoDesc={BLOG_PAGE_SEO.seoDesc}
+  ogImage={BLOG_PAGE_SEO.ogImage}
+  url={BLOG_PAGE_SEO.url}
+  doamin={BLOG_PAGE_SEO.domain}
+>
   <main>
     <div class='container mx-auto lg:py-8'>
       <div class='py-6'>

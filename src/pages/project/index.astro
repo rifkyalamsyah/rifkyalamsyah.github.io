@@ -12,14 +12,16 @@ const project: CollectionEntry<'portfolio'>[] = (
 );
 
 // SEO
-const title = 'Projects - Rifky Alamsyah';
-const seoDesc = 'Discover my portfolio';
-const ogImage = 'https://rifkyalamsyah.github.io/images/og/og-project.png';
-const url = 'https://rifkyalamsyah.github.io/project';
-const domain = 'rifkyalamsyah.github.io/project';
+import { PROJECT_PAGE_SEO } from '@config';
 ---
 
-<Layout {title} {seoDesc} {ogImage} {url} {domain}>
+<Layout
+  title={PROJECT_PAGE_SEO.title}
+  seoDesc={PROJECT_PAGE_SEO.seoDesc}
+  ogImage={PROJECT_PAGE_SEO.ogImage}
+  url={PROJECT_PAGE_SEO.url}
+  doamin={PROJECT_PAGE_SEO.domain}
+>
   <main>
     <section>
       <div class='container mx-auto py-8'>
