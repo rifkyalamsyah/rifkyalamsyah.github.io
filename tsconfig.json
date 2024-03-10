@@ -5,7 +5,9 @@
     "paths": {
       "@layouts/*": ["src/layouts/*"],
       "@components/*": ["src/components/*"],
-      "@icons/*": ["src/components/icons/*"]
+      "@icons/*": ["src/components/icons/*"],
+      "@config": ["src/config.ts"],
+      "@utils": ["src/utils.ts"]
     }
   }
 }
