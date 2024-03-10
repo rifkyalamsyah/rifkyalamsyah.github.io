@@ -1,0 +1,39 @@
+---
+import Picture from 'astro/components/Picture.astro';
+import Badge from '@components/blog/BadgeSm.astro';
+
+const { link, imgSrc, imgAlt, category, title, readingTime, pubDate } =
+  Astro.props;
+---
+
+<article>
+  <div
+    class='p-1 lg:p-2 bg-wood-50 dark:bg-wood-950/50 border border-wood-100/60 dark:border-wood-800/30 rounded-xl duration-1000'
+  >
+    <a href={link}>
+      <Picture
+        src={imgSrc}
+        alt={imgAlt}
+        class='rounded-xl'
+        formats={['avif', 'webp']}
+      />
+    </a>
+
+    <div class='text-wrapper mt-4 mb-3 px-2 sm:px-3'>
+      <div class='flex'>
+        <Badge value={category} />
+      </div>
+
+      <a
+        href={link}
+        class='text-xl text-wood-800 hover:text-wood-800 dark:text-wood-300 dark:hover:text-white line-clamp-1'
+      >
+        {title}
+      </a>
+      <p class='text-sm text-gray-500 dark:text-gray-400'>
+        {readingTime} -
+        {pubDate}
+      </p>
+    </div>
+  </div>
+</article>

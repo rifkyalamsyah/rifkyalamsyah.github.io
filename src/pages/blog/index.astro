@@ -1,7 +1,7 @@
 ---
 import Layout from '@layouts/MainLayout.astro';
+import Card from '@components/blog/Card.astro';
 import { formatDate } from 'src/utils';
-import { Picture } from 'astro:assets';
 
 import MostRecentCard from '@components/blog/MostRecentArticle.astro';
 
@@ -45,44 +45,22 @@ import { BLOG_PAGE_SEO } from '@config';
           Explore my insightful articles.
         </p>
       </div>
-
       <MostRecentCard article={mostRecentArticle} />
-
       <div class='grid lg:grid-cols-2 xl:grid-cols-3 gap-4 justify-center mt-4'>
         {
-          otherArticles.slice(0).map((blogPost) => (
-            <ul>
-              <li class='p-1 lg:p-2 bg-wood-50 dark:bg-wood-950/50 border border-wood-100/60 dark:border-wood-800/30 rounded-xl duration-1000'>
-                <a href={`/blog/${blogPost.slug}`}>
-                  <Picture
-                    src={blogPost.data.image}
-                    alt={blogPost.slug}
-                    class='rounded-xl'
-                    formats={['avif', 'webp']}
-                  />
-                </a>
-
-                <div class='text-wrapper mt-4 mb-3 px-2 sm:px-3'>
-                  <div class='flex'>
-                    <span class='mb-1 px-4 py-1 bg-wood-100/90 dark:bg-wood-800/30 text-xs text-wood-800 dark:text-wood-200 border border-wood-200/50 dark:border-wood-800/50 rounded-full duration-1000'>
-                      {blogPost.data.category}
-                    </span>
-                  </div>
-
-                  <a
-                    href={`/blog/${blogPost.slug}`}
-                    class='text-xl text-wood-800 hover:text-wood-800 dark:text-wood-300 dark:hover:text-white line-clamp-1'
-                  >
-                    {blogPost.data.title}
-                  </a>
-                  <p class='text-sm text-gray-500 dark:text-gray-400'>
-                    {blogPost.data.readingTime} -
-                    {formatDate(blogPost.data.pubDate)}
-                  </p>
-                </div>
-              </li>
-            </ul>
-          ))
+          otherArticles
+            .slice(0)
+            .map((post) => (
+              <Card
+                link={`/blog/${post.slug}`}
+                imgSrc={post.data.image}
+                imgAlt={post.slug}
+                category={post.data.category}
+                title={post.data.title}
+                readingTime={post.data.readingTime}
+                pubDate={formatDate(post.data.pubDate)}
+              />
+            ))
         }
       </div>
     </div>

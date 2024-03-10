@@ -1,6 +1,8 @@
 ---
 import Layout from '@layouts/MainLayout.astro';
 import IconBack from '@icons/caret-left.astro';
+import Badge from '@components/blog/BadgeLg.astro';
+
 import { formatDate } from '../../utils';
 import { Picture } from 'astro:assets';
 
@@ -44,15 +46,11 @@ const domain = `rifkyalamsyah.github.io/blog/${entry.slug}`;
       class='mt-8 mx-auto prose lg:prose-xl dark:prose-invert prose-img:rounded-xl prose-a:no-underline hover:prose-a:underline prose-headings:text-wood-800 dark:prose-headings:text-wood-200 prose-headings:mb-4 prose-p:my-4 prose-img:my-6 prose-p:text-wood-800 dark:prose-p:text-wood-300 prose-blockquote:text-base prose-blockquote:text-wood-800 prose-blockquote:border-l-wood-300 dark:prose-blockquote:border-l-wood-800 marker:text-wood-400 dark:marker:text-wood-400 dark:prose-blockquote:text-wood-300 prose-pre:!bg-wood-900 dark:prose-pre:!bg-wood-950 prose-hr:border-wood-100/80 dark:prose-hr:border-wood-800/40 prose-h1:text-4xl prose-h2:text-3xl prose-h3:text-2xl prose-h4:text-xl prose-p:text-lg prose-li:text-lg prose-ol:my-4 prose-ul:my-4 duration-700'
     >
       <div class='flex justify-center'>
-        <span
-          class='mb-4 px-5 py-1 bg-wood-100/90 dark:bg-wood-800/30 text-base text-wood-800 dark:text-wood-200 border border-wood-200 dark:border-wood-800/50 rounded-full duration-1000'
-        >
-          {entry.data.category}
-        </span>
+        <Badge value={entry.data.category} />
       </div>
       <h1 class='text-center'>{entry.data.title}</h1>
       <p class='text-center'>
-        Published on {formatDate(entry.data.pubDate)} | {entry.data.readingTime}
+        {formatDate(entry.data.pubDate)} | {entry.data.readingTime}
       </p>
       <Picture
         src={entry.data.image}
