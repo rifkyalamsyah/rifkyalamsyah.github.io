@@ -1,6 +1,6 @@
 ---
 import Layout from '@layouts/MainLayout.astro';
-import { Picture } from 'astro:assets';
+import Card from '@components/project/Card.astro';
 
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
@@ -47,43 +47,14 @@ import { PROJECT_PAGE_SEO } from '@config';
           class='grid md:grid-cols-2 lg:grid-cols-3 gap-4 justify-center mt-4'
         >
           {
-            project.map((projectPost) => (
-              <div class='pb-5 bg-wood-50 dark:bg-wood-950/50 border border-wood-100/60 dark:border-wood-800/30 rounded-xl duration-1000'>
-                <a href={`/project/${projectPost.slug}`}>
-                  <Picture
-                    src={projectPost.data.image}
-                    alt={projectPost.slug}
-                    class='rounded-xl'
-                    width={1280}
-                    height={700}
-                    formats={['avif', 'webp']}
-                    quality={'mid'}
-                  />
-                </a>
-                <div class='mt-4 px-3 lg:px-4 flex flex-wrap'>
-                  <a
-                    href={`/project/${projectPost.slug}`}
-                    class='text-lg text-wood-800 hover:text-wood-900 dark:text-wood-300 dark:hover:text-white line-clamp-1'
-                  >
-                    {projectPost.data.title}
-                  </a>
-                </div>
-                <div class='mt-2 px-3 lg:px-4 flex gap-3'>
-                  <a
-                    href={`/project/${projectPost.slug}`}
-                    class='py-1 px-3 text-sm text-wood-500  dark:text-wood-500 hover:text-wood-900 dark:hover:text-wood-200 bg-wood-100 dark:bg-wood-900 rounded-lg hover:underline flex items-center gap-1 duration-1000'
-                  >
-                    Case Study
-                  </a>
-                  <a
-                    href={projectPost.data.linkWeb}
-                    class='py-1 px-3 text-sm text-wood-500  dark:text-wood-500 hover:text-wood-900 dark:hover:text-wood-200 bg-wood-100 dark:bg-wood-900 rounded-lg hover:underline flex items-center gap-1 duration-1000'
-                    target='_blank'
-                  >
-                    Visit Website
-                  </a>
-                </div>
-              </div>
+            project.map((post) => (
+              <Card
+                slug={`/project/${post.slug}`}
+                imgUrl={post.data.image}
+                imgAlt={post.slug}
+                title={post.data.title}
+                url={post.data.linkWeb}
+              />
             ))
           }
         </div>

@@ -1,0 +1,45 @@
+---
+import Picture from 'astro/components/Picture.astro';
+
+const { slug, imgUrl, imgAlt, title, url } = Astro.props;
+---
+
+<article>
+  <div
+    class='pb-5 bg-wood-50 dark:bg-wood-950/50 border border-wood-100/60 dark:border-wood-800/30 rounded-xl duration-1000'
+  >
+    <a href={slug}>
+      <Picture
+        src={imgUrl}
+        alt={imgAlt}
+        class='rounded-xl'
+        width={1280}
+        height={700}
+        formats={['avif', 'webp']}
+      />
+    </a>
+    <div class='mt-4 px-3 lg:px-4 flex flex-wrap'>
+      <a
+        href={slug}
+        class='text-lg text-wood-800 hover:text-wood-900 dark:text-wood-300 dark:hover:text-white line-clamp-1'
+      >
+        {title}
+      </a>
+    </div>
+    <div class='mt-2 px-3 lg:px-4 flex gap-3'>
+      <a
+        href={slug}
+        class='py-1 px-3 text-sm text-wood-500 dark:text-wood-500 hover:text-wood-900 dark:hover:text-wood-200 bg-wood-100 dark:bg-wood-900 rounded-lg hover:underline flex items-center gap-1 duration-1000'
+      >
+        Case Study
+      </a>
+      <a
+        href={url}
+        class='py-1 px-3 text-sm text-wood-500 dark:text-wood-500 hover:text-wood-900 dark:hover:text-wood-200 bg-wood-100 dark:bg-wood-900 rounded-lg hover:underline flex items-center gap-1 duration-1000'
+        target='_blank'
+      >
+        Visit Website
+      </a>
+    </div>
+  </div>
+</article>

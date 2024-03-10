@@ -1,4 +1,3 @@
-import { boolean } from 'astro/zod';
 import { z, defineCollection } from 'astro:content';
 
 // project
