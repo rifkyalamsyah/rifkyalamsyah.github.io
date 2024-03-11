@@ -1,6 +1,7 @@
 ---
 import Layout from '@layouts/MainLayout.astro';
 import IconBack from '@icons/caret-left.astro';
+import BackTo from '@components/navigation/Back.astro';
 import Badge from '@components/blog/BadgeLg.astro';
 
 import { formatDate } from '../../utils';
@@ -34,11 +35,7 @@ const domain = `rifkyalamsyah.github.io/blog/${entry.slug}`;
 <Layout {title} {seoDesc} {ogImage} {url} {domain}>
   <div class='container mx-auto'>
     <div class='my-4'>
-      <a
-        href='/blog'
-        class='text-wood-500 hover:text-wood-800 dark:text-wood-400 dark:hover:text-white flex items-center'
-        ><span><IconBack /></span> Back to Posts</a
-      >
+      <BackTo href='/blog' name='Back to posts' />
     </div>
     <hr class='border-wood-100/80 dark:border-wood-800/20 duration-1000' />
 
@@ -50,7 +47,7 @@ const domain = `rifkyalamsyah.github.io/blog/${entry.slug}`;
       </div>
       <h1 class='text-center'>{entry.data.title}</h1>
       <p class='text-center'>
-        {formatDate(entry.data.pubDate)} | {entry.data.readingTime}
+        {formatDate(entry.data.pubDate)} - {entry.data.readingTime}
       </p>
       <Picture
         src={entry.data.image}

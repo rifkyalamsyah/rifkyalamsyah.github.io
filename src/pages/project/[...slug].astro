@@ -1,6 +1,7 @@
 ---
 import Layout from '@layouts/MainLayout.astro';
-import IconBack from '@components/icons/caret-left.astro';
+import BackTo from '@components/navigation/Back.astro';
+import Button from '@components/button/Primary.astro';
 
 import { Picture } from 'astro:assets';
 import { getCollection } from 'astro:content';
@@ -32,11 +33,7 @@ const domain = `rifkyalamsyah.github.io/project/${entry.slug}`;
     <section class='py-8'>
       <div class='container mx-auto'>
         <div class='mb-4'>
-          <a
-            href='/project'
-            class='text-wood-500 hover:text-wood-800 dark:text-wood-400 dark:hover:text-white flex items-center'
-            ><span><IconBack /></span> Back to projects</a
-          >
+          <BackTo href='/project' name='Back to projects' />
         </div>
         <hr class='border-wood-100/80 dark:border-wood-800/20 duration-1000' />
         <div class='flex flex-col justify-center'>
@@ -46,13 +43,12 @@ const domain = `rifkyalamsyah.github.io/project/${entry.slug}`;
             <h1>{entry.data.sortTitle} - {entry.data.category}</h1>
             <p>{entry.data.desc}</p>
             <div class='flex mt-6'>
-              <a
+              <Button
                 href={entry.data.linkWeb}
+                name='Visit Website'
                 target='_blank'
-                class='py-2 px-6 text-base text-wood-600 dark:text-wood-100 bg-wood-100 dark:bg-wood-800 hover:bg-wood-200 dark:hover:bg-wood-800/50 border border-wood-200 dark:border-wood-700 rounded-xl hover:no-underline duration-1000'
-              >
-                Visit Website
-              </a>
+                radius='rounded-xl'
+              />
             </div>
             <div class='my-5 duration-700'>
               <Picture

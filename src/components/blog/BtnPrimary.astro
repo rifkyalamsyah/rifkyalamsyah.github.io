@@ -1,0 +1,10 @@
+---
+const { href, name, target } = Astro.props;
+---
+
+<a
+  href={href}
+  class='py-1 px-3 bg-dark-950 dark:bg-white hover:bg-dark-700 dark:hover:bg-dark-300 text-wood-100 dark:text-black rounded-lg flex items-center gap-1 duration-1000'
+  target={target}
+  rel='noopener noreferrer'>{name}</a
+>

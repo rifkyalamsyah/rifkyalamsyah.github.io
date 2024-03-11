@@ -1,22 +1,18 @@
 ---
-const { className, title, desc, link, copy, target } = Astro.props;
+import Button from '@components/about/BtnPrimary.astro';
+const { className, title, desc, link, copy, target, fs } = Astro.props;
 ---
 
 <div
-  class=`${className} bg-wood-50 dark:bg-wood-950 border border-wood-100/60 dark:border-wood-800/30 p-8 rounded-xl duration-1000`
+  class=`${className} bg-white dark:bg-dark-950 border border-dark-100/60 dark:border-dark-800/30 p-8 rounded-xl duration-1000`
 >
-  <h1 class='text-2xl text-wood-900 dark:text-white'>
+  <h1 class='text-2xl text-black dark:text-white'>
     {title}
   </h1>
-  <p class='text-lg text-gray-600 dark:text-gray-400'>
+  <p class=`${fs} text-dark-500 dark:text-dark-300`>
     {desc}
   </p>
   <div class='flex mt-3'>
-    <a
-      href={link}
-      class='py-1 px-3 bg-wood-100 dark:bg-wood-900 rounded-lg text-wood-500 dark:text-wood-400 hover:text-wood-900 dark:hover:text-wood-100 hover:underline flex items-center gap-1 duration-1000'
-      target={target}
-      rel='noopener noreferrer'>{copy}</a
-    >
+    <Button href={link} name={copy} target={target} />
   </div>
 </div>
