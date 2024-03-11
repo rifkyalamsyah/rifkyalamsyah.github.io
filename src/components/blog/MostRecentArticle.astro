@@ -43,7 +43,7 @@ interface Props {
       <p class='lg:mt-2 text-sm text-dark-500 dark:text-dark-300'>
         {post.data.readingTime} - {formatDate(post.data.pubDate)}
       </p>
-      <div class='flex mt-4 lg:mt-6'>
+      <div class='hidden lg:flex mt-4 lg:mt-6'>
         <Button href=`/blog/${post.slug}` name='Read Article' />
       </div>
     </div>
