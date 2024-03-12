@@ -1,0 +1,12 @@
+---
+const { href, name, target, fs } = Astro.props;
+---
+
+<li>
+  <a
+    href={href}
+    class=`${fs} lg:text-base text-dark-600 dark:text-dark-300 hover:text-dark-950 dark:hover:text-white`
+    data-astro-prefetch
+    target={target}>{name}</a
+  >
+</li>

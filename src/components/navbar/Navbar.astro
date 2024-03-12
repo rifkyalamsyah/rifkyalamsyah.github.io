@@ -1,0 +1,128 @@
+---
+import {
+  Astronav,
+  MenuItems,
+  MenuIcon,
+} from 'astro-navbar';
+import List from '@components/navbar/List.astro';
+import DropdownList from '@components/navbar/DropdownList.astro';
+import IconSun from '@icons/Sun.astro';
+import IconMoon from '@icons/Moon.astro';
+---
+
+<header
+  class='py-5 border-b border-dark-100/80 dark:border-dark-800/20 duration-1000'
+>
+  <div class='container mx-auto flex flex-col lg:flex-row'>
+    <Astronav>
+      <div class='flex w-full justify-between'>
+        <a href='/' class='text-2xl font-bold h-0' data-astro-prefetch
+          ><span
+            class='bg-gradient-to-r from-dark-800 to-dark-400 bg-clip-text text-transparent tracking-tighter'
+            >リフキ</span
+          ></a
+        >
+        <div class='block lg:hidden'>
+          <MenuIcon class='w-8 h-8 text-gray-600 dark:text-white' />
+        </div>
+      </div>
+      <MenuItems
+        class='hidden lg:flex mt-5 lg:mt-0 lg:bg-inherit p-5 lg:p-0 rounded-lg bg-dark-100/40 dark:bg-dark-950/50 dark:lg:bg-inherit border border-dark-200/50 dark:border-dark-800/50 lg:border-none duration-1000'
+      >
+        <ul class='flex flex-col lg:flex-row gap-4 lg:gap-5'>
+          <List href='/' name='Home' fs='text-3xl' />
+          <List href='/about' name='About' fs='text-3xl' />
+          <List href='/project' name='Project' fs='text-3xl' />
+          <List href='/blog' name='Blog' fs='text-3xl' />
+          <DropdownList name='Product'>
+            <List
+              href='https://rifky.gumroad.com'
+              name='Gumroad'
+              target='_blank'
+              fs='text-2xl'
+            />
+            <List
+              href='https://iconscout.com/contributors/rifkyalamsyah/'
+              name='Iconscot'
+              target='_blank'
+              fs='text-2xl'
+            />
+          </DropdownList>
+          <List
+            href='https://zaap.bio/rifkyalamsyah'
+            name='Links'
+            target='_blank'
+            fs='text-3xl'
+          />
+          <li>
+            <div class='flex'>
+              <input type='checkbox' id='toggle' class='hidden' />
+              <label for='toggle'>
+                <div
+                  class='w-10 h-6 bg-dark-500 flex items-center p-1 gap-2 rounded-full cursor-pointer'
+                >
+                  <IconSun />
+                  <div
+                    class='w-4 h-4 bg-white rounded-full toggle-circle absolute'
+                  >
+                  </div>
+                  <IconMoon />
+                </div>
+              </label>
+            </div>
+          </li>
+        </ul>
+      </MenuItems>
+    </Astronav>
+  </div>
+
+  <style>
+    .hidden {
+      display: none;
+    }
+
+    #toggle:checked ~ label div.toggle-circle {
+      @apply translate-x-4;
+      @apply duration-700;
+      @apply ease-in-out;
+    }
+
+    #toggle:not(:checked) ~ label div.toggle-circle {
+      @apply translate-x-0;
+      @apply duration-700;
+      @apply ease-in-out;
+    }
+  </style>
+
+  <script is:inline>
+    const darkMode = () => {
+      const toggleMode = document.querySelector('#toggle');
+      const html = document.querySelector('html');
+
+      toggleMode.addEventListener('click', function () {
+        if (toggle.checked) {
+          html.classList.add('dark');
+          localStorage.theme = 'dark';
+        } else {
+          html.classList.remove('dark');
+          localStorage.theme = 'light';
+        }
+      });
+
+      // matches toggle position
+      if (
+        localStorage.theme === 'dark' ||
+        (!('theme' in localStorage) &&
+          window.matchMedia('(prefers-color-scheme: dark)').matches)
+      ) {
+        toggleMode.checked = true;
+      } else {
+        toggleMode.checked = false;
+      }
+    };
+
+    darkMode();
+
+    document.addEventListener('astro:after-swap', darkMode);
+  </script>
+</header>
