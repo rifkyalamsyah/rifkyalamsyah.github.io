@@ -3,7 +3,7 @@ slug: 'cashier-web-design'
 title: 'Cashier Web Design'
 sortTitle: 'Cashier'
 desc: 'The project is to create a SaaS cashier website that can help with payments. Transform the traditional checkout experience into an efficient and innovative digital experience.'
-category: 'SaaS finance landing page'
+category: 'Redesigned SaaS finance landing page'
 image: '/images/p/cashier/cashier.webp'
 linkWeb: 'https://rifkyalamsyah.github.io/cashier'
 pubDate: 2024-01-21
@@ -12,8 +12,10 @@ pubDate: 2024-01-21
 **Role:**
 
 1. **User Interface Designer**
-   - Creating Wireframe (_Low Fidelity Design_).
-   - Designing Visuals design (_High Fidelity Design_).
+   - Creating a sitemap.
+   - Designing a low-fidelity design (wireframe).
+   - Creating a style guide.
+   - Designing high-fidelity design and create UI components.
 2. **Front-End Web Developer**
    - Slicing UI design to code using Bootstrap 5 and custom CSS.
 
@@ -29,8 +31,89 @@ pubDate: 2024-01-21
 
 - Personal Project.
 
-Design inspired by **BuildWithAngga**
+---
+
+import { Picture } from 'astro:assets';
+import sitemap from 'public/images/p/cashier/sitemap-cashier.png';
+import wireframe from 'public/images/p/cashier/wireframe-cashier.png';
+import dLight from 'public/images/p/cashier/light-desktop-cashier.png';
+import mLight from 'public/images/p/cashier/light-mobile-cashier.png';
+import components from 'public/images/p/cashier/components-cashier.png';
+import style from 'public/images/p/cashier/style-guide-cashier.png';
+
+## The Process
+
+1. ### Sitemap
+      A sitemap is a list of all the important pages on a website. Before I created a wireframe for this website, I create the sitemap so that I understood the content structure of the website that would be created.
+
+<figure>
+<Picture src={sitemap} alt='sitemap cashier' formats={['avif', 'webp']} />
+<figcaption class='text-center'>Sitemap - {frontmatter.sortTitle}</figcaption>
+</figure>
+
+2. ### Low-Fidelity Design (Wireframe)
+      Low-fidelity design is a design asset that has the basic elements of a final design. It’s used to evaluate design ideas and concepts.
+	
+<figure>
+<Picture src={wireframe} alt='wireframe cashier' formats={['avif', 'webp']} />
+<figcaption class='text-center'>Wireframe - {frontmatter.sortTitle}</figcaption>
+</figure>
+
+3. ### Style Guide
+      A style guide is a set of standards for writing, formatting, and designing contents. Before I design a high-fidelity design, I created some core style guides that will be used, such as font, type scale, and main colors.
+
+<figure>
+<Picture src={style} alt='style guide cashier' formats={['avif', 'webp']} />
+<figcaption class='text-center'>Style Guide - {frontmatter.sortTitle}</figcaption>
+</figure>
+
+4. ### High-Fidelity Design
+      High-fidelity design is a prototype that closely matches the final design of a product or website. It’s a polished simulation of a final product that includes visual design details.
+	
+<figure>
+<Picture
+  src={dLight}
+  alt='high fidelity design cashier'
+  formats={['avif', 'webp']}
+/>
+<figcaption class='text-center'>High-Fidelity Design - {frontmatter.sortTitle}</figcaption>
+</figure>
+
+5. ### Responsive Deisgn
+      Responsive design is a web design approach that ensures a website’s appearance and usability remain optimal regardless of the device it’s displayed on.
+
+<figure>
+<Picture
+  src={mLight}
+  alt='responsive design cashier'
+  formats={['avif', 'webp']}
+/>
+<figcaption class='text-center'>Responsive Design - {frontmatter.sortTitle}</figcaption>
+</figure>	
+
+6. ### Components
+      UI components are the basic building blocks of a website user interface. They are elements or modules within a graphical user interface that display content or serve a specific function. I made two variants of UI components for the desktop and mobile versions.
+
+<figure>
+<Picture
+  src={components}
+  alt='ui components cashier'
+  formats={['avif', 'webp']}
+/>
+<figcaption class='text-center'>UI Components - {frontmatter.sortTitle}</figcaption>
+</figure>
+
+Visit the live <a href='https://rifkyalamsyah.github.io/cashier' target='_blank'>site here</a>
+
+<figure>
+<Picture
+  src={dLight}
+  alt='high fidelity design cashier'
+  formats={['avif', 'webp']}
+/>
+<figcaption class='text-center'>{frontmatter.sortTitle} Web Design</figcaption>
+</figure>
 
 ---
 
-Detailed Case Study Coming Soon!
+Design inspired by <a href='https://buildwithangga.com/' target='_blank'>BuildWithAngga</a>

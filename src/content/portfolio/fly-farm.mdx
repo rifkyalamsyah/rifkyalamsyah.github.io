@@ -3,7 +3,7 @@ slug: 'fly-farm-web-design'
 title: 'Fly Farm Web Design'
 sortTitle: 'Fly Farm'
 desc: 'The project is to create a modern farming website that can help open the doors to the digitally connected world of modern farming.'
-category: 'Agriculture technology website'
+category: 'Redesigned farming technology website'
 image: '/images/p/fly-farm/fly-farm.webp'
 linkWeb: 'https://rifkyalamsyah.github.io/fly-farm'
 pubDate: 2024-01-22
@@ -37,7 +37,6 @@ pubDate: 2024-01-22
 
 ---
 
-import { Image } from 'astro:assets';
 import { Picture } from 'astro:assets';
 import sitemap from 'public/images/p/fly-farm/sitemap-fly-farm.png';
 import wireframe from 'public/images/p/fly-farm/wireframe-fly-farm.png';
@@ -58,77 +57,90 @@ import style from 'public/images/p/fly-farm/style-guide-fly-farm.png';
 
    A sitemap is a list of all the important pages on a website. Before I created a wireframe for this website, I create the sitemap so that I understood the content structure of the website that would be created.
 
-   - Fly farm - sitemap
 
+<figure>
 <Picture src={sitemap} alt='sitemap fly-farm' formats={['avif', 'webp']} />
+<figcaption class='text-center'>Sitemap - {frontmatter.sortTitle}</figcaption>
+</figure>
 
 2. ### Low Fidelity Design (wireframe)
 
    Low-fidelity design is a design asset that has the basic elements of a final design. It's used to evaluate design ideas and concepts. I created the wireframe directly in Figma to save time.
 
-   - Wireframe - desktop & mobile device
-
+<figure>
 <Picture
   src={wireframe}
   alt='low fidelity design fly-farm'
   formats={['avif', 'webp']}
 />
+<figcaption class='text-center'>Wireframe - {frontmatter.sortTitle}</figcaption>
+</figure>
 
 3. ### Style Guide
 
    A style guide is a set of standards for writing, formatting, and designing contents. Before I design a high-fidelity design, I created some core style guides that will be used, such as font, type scale, and main colors.
 
+<figure>
 <Picture src={style} alt='style guide fly-farm' formats={['avif', 'webp']} />
+<figcaption class='text-center'>Style Guide - {frontmatter.sortTitle}</figcaption>
+</figure>
 
 4. ### High Fidelity Design
 
    High-fidelity design is a prototype that closely matches the final design of a product or website. It's a polished simulation of a final product that includes visual design details. I created this website with two versions, namely light and dark mode themes.
 
-   - Landing page - light mode
-
+<figure>
 <Picture
   src={dLight}
   alt='high fidelity design fly-farm'
   formats={['avif', 'webp']}
 />
+<figcaption class='text-center'>High-Fidelity Design - {frontmatter.sortTitle} (Light Mode)</figcaption>
+</figure>
 
-      - Landing page - dark mode
-
+<figure>
 <Picture
   src={dDark}
   alt='high fidelity design fly-farm'
   formats={['avif', 'webp']}
 />
+<figcaption class='text-center'>High-Fidelity Design - {frontmatter.sortTitle} (Dark Mode)</figcaption>
+</figure>
 
 5. ### Responsive Design
 
    Responsive design is a web design approach that ensures a website's appearance and usability remain optimal regardless of the device it's displayed on. I created this website with two mobile versions, namely light and dark mode themes.
 
-   - Mobile device - light mode
-
+<figure>
 <Picture
   src={mLight}
   alt='responsive design fly-farm'
   formats={['avif', 'webp']}
 />
+<figcaption class='text-center'>Responsive Design - {frontmatter.sortTitle} (Light Mode)</figcaption>
+</figure>
 
-    - Mobile device - dark mode
-
+<figure>
 <Picture
   src={mDark}
   alt='responsive design fly-farm'
   formats={['avif', 'webp']}
 />
+<figcaption class='text-center'>Responsive Design - {frontmatter.sortTitle} (Dark Mode)</figcaption>
+</figure>
 
 6. ### Components
 
    UI components are the basic building blocks of a website user interface. They are elements or modules within a graphical user interface that display content or serve a specific function. I made two variants of UI components for the desktop and mobile versions.
 
+<figure>
 <Picture
   src={components}
   alt='ui components fly-farm'
   formats={['avif', 'webp']}
 />
+<figcaption class='text-center'>UI Components - {frontmatter.sortTitle}</figcaption>
+</figure>
 
 ## Conclusion
 
@@ -136,11 +148,14 @@ import style from 'public/images/p/fly-farm/style-guide-fly-farm.png';
 
 Visit the live <a href='https://rifkyalamsyah.github.io/fly-farm' target='_blank'>site here</a>
 
+<figure>
 <Picture
   src={dLight}
   alt='high fidelity design fly-farm'
   formats={['avif', 'webp']}
 />
+<figcaption class='text-center'>{frontmatter.sortTitle} Web Design</figcaption>
+</figure>
 
 ---
 
