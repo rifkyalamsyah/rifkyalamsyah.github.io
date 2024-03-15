@@ -9,6 +9,8 @@ const projectCollection = defineCollection({
       desc: z.string(),
       pubDate: z.date(),
       category: z.string(),
+      services: z.string(),
+      year: z.string(),
       image: image(),
     }),
 });
