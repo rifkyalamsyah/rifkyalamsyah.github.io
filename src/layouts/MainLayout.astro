@@ -2,6 +2,9 @@
 import Head from '@layouts/MainHead.astro';
 import Nav from '@components/navbar/Navbar.astro';
 import Footer from '@components/Footer.astro';
+
+import '@fontsource-variable/dm-sans';
+
 const { title, seoDesc, ogImage, url, domain, keywords } = Astro.props;
 ---
 
@@ -22,7 +25,7 @@ const { title, seoDesc, ogImage, url, domain, keywords } = Astro.props;
     <Footer />
     <style is:global>
       html {
-        font-family: 'DM Sans', sans-serif;
+        font-family: 'DM Sans Variable', sans-serif;
       }
     </style>
   </body>
