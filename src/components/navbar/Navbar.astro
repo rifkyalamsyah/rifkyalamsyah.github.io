@@ -1,9 +1,5 @@
 ---
-import {
-  Astronav,
-  MenuItems,
-  MenuIcon,
-} from 'astro-navbar';
+import { Astronav, MenuItems, MenuIcon } from 'astro-navbar';
 import List from '@components/navbar/List.astro';
 import DropdownList from '@components/navbar/DropdownList.astro';
 import IconSun from '@icons/Sun.astro';
@@ -30,10 +26,15 @@ import IconMoon from '@icons/Moon.astro';
         class='hidden lg:flex mt-5 lg:mt-0 lg:bg-inherit p-5 lg:p-0 rounded-lg bg-dark-100/40 dark:bg-dark-950/50 dark:lg:bg-inherit border border-dark-200/50 dark:border-dark-800/50 lg:border-none duration-1000'
       >
         <ul class='flex flex-col lg:flex-row gap-4 lg:gap-5'>
-          <List href='/' name='Home' fs='text-3xl' />
-          <List href='/about' name='About' fs='text-3xl' />
-          <List href='/project' name='Project' fs='text-3xl' />
-          <List href='/blog' name='Blog' fs='text-3xl' />
+          <List href='/' name='Home' fs='text-3xl' data-astro-prefetch />
+          <List href='/about' name='About' fs='text-3xl' data-astro-prefetch />
+          <List
+            href='/project'
+            name='Project'
+            fs='text-3xl'
+            data-astro-prefetch
+          />
+          <List href='/blog' name='Blog' fs='text-3xl' data-astro-prefetch />
           <DropdownList name='Product'>
             <List
               href='https://rifky.gumroad.com'
@@ -44,6 +45,12 @@ import IconMoon from '@icons/Moon.astro';
             <List
               href='https://iconscout.com/contributors/rifkyalamsyah/'
               name='Iconscot'
+              target='_blank'
+              fs='text-2xl'
+            />
+            <List
+              href='https://www.figma.com/@rifkyalamsyah'
+              name='Freebies'
               target='_blank'
               fs='text-2xl'
             />

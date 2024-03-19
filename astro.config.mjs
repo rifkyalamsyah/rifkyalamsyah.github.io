@@ -6,8 +6,7 @@ import partytown from "@astrojs/partytown";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), mdx(), sitemap(), partytown()],
-  output: 'static',
+  integrations: [tailwind(), mdx(), sitemap(), partytown()],  
   prefetch: true,
   compressHTML: false,
   site: 'https://rifkyalamsyah.github.io',
