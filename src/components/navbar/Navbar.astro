@@ -4,6 +4,29 @@ import List from '@components/navbar/List.astro';
 import DropdownList from '@components/navbar/DropdownList.astro';
 import IconSun from '@icons/Sun.astro';
 import IconMoon from '@icons/Moon.astro';
+
+// links navbar
+const lists = [
+  { name: 'Home', url: '/' },
+  { name: 'About', url: '/about' },
+  { name: 'Project', url: '/project' },
+  { name: 'Blog', url: '/blog' },
+];
+
+// links dropdown
+const dropdownLists = [
+  { name: 'Gumroad', url: 'https://rifky.gumroad.com', target: '_blank' },
+  {
+    name: 'Iconscout',
+    url: 'https://iconscout.com/contributors/rifkyalamsyah',
+    target: '_blank',
+  },
+  {
+    name: 'Freebies',
+    url: 'https://www.figma.com/@rifkyalamsyah',
+    target: '_blank',
+  },
+];
 ---
 
 <header
@@ -25,44 +48,27 @@ import IconMoon from '@icons/Moon.astro';
       <MenuItems
         class='hidden lg:flex mt-5 lg:mt-0 lg:bg-inherit p-5 lg:p-0 rounded-lg bg-dark-100/40 dark:bg-dark-950/50 dark:lg:bg-inherit border border-dark-200/50 dark:border-dark-800/50 lg:border-none duration-1000'
       >
-        <ul class='flex flex-col lg:flex-row gap-4 lg:gap-5'>
-          <List href='/' name='Home' fs='text-3xl' data-astro-prefetch />
-          <List href='/about' name='About' fs='text-3xl' data-astro-prefetch />
-          <List
-            href='/project'
-            name='Project'
-            fs='text-3xl'
-            data-astro-prefetch
-          />
-          <List href='/blog' name='Blog' fs='text-3xl' data-astro-prefetch />
+        <ul class='flex flex-col lg:flex-row content-center gap-4 lg:gap-0'>
+          {
+            lists.map((item) => (
+              <List href={item.url} name={item.name} fs='text-3xl' />
+            ))
+          }
           <DropdownList name='Product'>
-            <List
-              href='https://rifky.gumroad.com'
-              name='Gumroad'
-              target='_blank'
-              fs='text-2xl'
-            />
-            <List
-              href='https://iconscout.com/contributors/rifkyalamsyah/'
-              name='Iconscot'
-              target='_blank'
-              fs='text-2xl'
-            />
-            <List
-              href='https://www.figma.com/@rifkyalamsyah'
-              name='Freebies'
-              target='_blank'
-              fs='text-2xl'
-            />
+            {
+              dropdownLists.map((item) => (
+                <List
+                  href={item.url}
+                  name={item.name}
+                  target={item.target}
+                  fs='text-2xl'
+                />
+              ))
+            }
           </DropdownList>
-          <List
-            href='https://zaap.bio/rifkyalamsyah'
-            name='Links'
-            target='_blank'
-            fs='text-3xl'
-          />
+          <!-- toggle -->
           <li>
-            <div class='flex'>
+            <div class='flex content-center py-1'>
               <input type='checkbox' id='toggle' class='hidden' />
               <label for='toggle'>
                 <div
@@ -78,6 +84,7 @@ import IconMoon from '@icons/Moon.astro';
               </label>
             </div>
           </li>
+          <!-- toggle end -->
         </ul>
       </MenuItems>
     </Astronav>

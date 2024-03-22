@@ -1,6 +1,7 @@
 ---
 import BtnPrimary from '@components/about/BtnPrimary.astro';
-const { className, title, desc, link, text, target, fs } = Astro.props;
+import BtnSecondary from '@components/about/BtnSecondary.astro';
+const { className, title, desc, link, text, target, fs, linkTwo, textTwo } = Astro.props;
 ---
 
 <div
@@ -12,7 +13,8 @@ const { className, title, desc, link, text, target, fs } = Astro.props;
   <p class=`${fs} text-dark-500 dark:text-dark-300`>
     {desc}
   </p>
-  <div class='flex mt-3'>
+  <div class='flex mt-3 gap-2'>
     <BtnPrimary href={link} name={text} target={target} />
+    <BtnSecondary href={linkTwo} name={textTwo} target={target} />
   </div>
 </div>

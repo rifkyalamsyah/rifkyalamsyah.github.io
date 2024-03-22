@@ -1,35 +1,52 @@
 ---
 import Layout from '@layouts/MainLayout.astro';
 import Card from '@components/about/Card.astro';
+import CardAbout from '@components/about/CardAbout.astro';
 import CardSpotify from '@components/about/CardMusic.astro';
 
 // SEO
 import { ABOUT_PAGE_SEO } from '@config';
 
-// data
-const about = {
+// about me
+const a = {
   name: 'Rifky Alamsyah',
   desc: 'UI Designer & Front-End Web Developer, based in Indonesia 🇮🇩',
   resumeUrl: 'https://read.cv/rifkyalamsyah',
+  text: 'Resume',
+  linkBio: 'https://zaap.bio/rifkyalamsyah',
+  textTwo: 'Links',
+  class: 'lg:col-span-3',
+  fontSize: 'lg:text-lg',
+  target: '_blank',
 };
 
-const blog = {
-  title: 'Blog',
-  desc: 'Read my insightful articles.',
-  url: '/blog',
-};
-
-const project = {
-  title: 'Projects',
-  desc: 'Discover my portfolio.',
-  url: '/project',
-};
-
-const product = {
-  title: 'Digital Product',
-  desc: 'Check out 3D Icons / Illustrations.',
-  url: 'http://rifky.gumroad.com/',
-};
+// links card
+const links = [
+  {
+    title: 'Project',
+    desc: 'Discover my portfolio.',
+    url: '/project',
+    class: 'lg:col-span-2 lg:row-start-2',
+    textBtn: 'See Portfolio',
+    target: '',
+  },
+  {
+    title: 'Gumroad',
+    desc: 'Check out 3D Icons / Illustrations.',
+    url: 'http://rifky.gumroad.com/',
+    class: 'lg:col-start-3 lg:row-start-2',
+    textBtn: 'Discover',
+    target: '_blank',
+  },
+  {
+    title: 'Blog',
+    desc: 'Read my insightful articles.',
+    url: '/blog',
+    class: 'lg:col-start-4 lg:row-start-2',
+    textBtn: 'Read Article',
+    target: '',
+  },
+];
 ---
 
 <Layout
@@ -45,43 +62,33 @@ const product = {
     <section>
       <div class='container mx-auto py-8'>
         <div class='grid grid-col-4 grid-rows-2 gap-2 xl:mx-10'>
-          <!-- 1st -->
-          <Card
-            className='lg:col-span-3'
-            fs='lg:text-lg'
-            title={about.name}
-            desc={about.desc}
-            link={about.resumeUrl}
-            copy='Resume'
-            target='_blank'
+          <!-- 1st card -->
+          <CardAbout
+            className={a.class}
+            fs={a.fontSize}
+            title={a.name}
+            desc={a.desc}
+            link={a.resumeUrl}
+            text={a.text}
+            linkTwo={a.linkBio}
+            textTwo={a.textTwo}
+            target={a.target}
           />
-          <!-- 2nd -->
+          <!-- 2nd card -->
           <CardSpotify className='lg:col-start-4' />
-          <!-- 3rd -->
-          <Card
-            className='lg:col-span-2 lg:row-start-2'
-            title={project.title}
-            desc={project.desc}
-            link={project.url}
-            copy='See Portfolio'
-          />
-          <!-- 4th -->
-          <Card
-            className='lg:col-start-3 lg:row-start-2'
-            title={product.title}
-            desc={product.desc}
-            link={product.url}
-            copy='Discover'
-            target='_blank'
-          />
-          <!-- 5th -->
-          <Card
-            className='lg:col-start-4 lg:row-start-2'
-            title={blog.title}
-            desc={blog.desc}
-            link={blog.url}
-            copy='Read article'
-          />
+          <!-- all card links -->
+          {
+            links.map((item) => (
+              <Card
+                className={item.class}
+                title={item.title}
+                desc={item.desc}
+                link={item.url}
+                text={item.textBtn}
+                target={item.target}
+              />
+            ))
+          }
         </div>
       </div>
     </section>

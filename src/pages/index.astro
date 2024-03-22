@@ -20,7 +20,7 @@ import { HOME_PAGE_SEO } from '@config';
   </main>
   <section class='py-20'>
     <div class='container mx-auto'>
-      <Hi />
+      <Hi client:load/>
       <h1 class='text-center text-3xl sm:text-5xl'>
         <span
           class='bg-gradient-to-r from-dark-300 to-dark-900 bg-clip-text text-transparent'
@@ -36,7 +36,7 @@ import { HOME_PAGE_SEO } from '@config';
           href='/about'
           name='Discover 👀'
           radius='rounded-full'
-          data-astro-prefetch='load'
+          data-astro-prefetch
         />
       </div>
     </div>

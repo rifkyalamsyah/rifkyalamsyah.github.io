@@ -5,7 +5,7 @@ const { href, name, target, fs } = Astro.props;
 <li>
   <a
     href={href}
-    class=`${fs} lg:text-base text-dark-600 dark:text-dark-300 hover:text-dark-950 dark:hover:text-white flex`
+    class=`${fs} lg:text-base text-dark-600 dark:text-dark-300 lg:px-4 lg:py-1 lg:hover:bg-dark-100/80 lg:dark:hover:bg-dark-950 lg:hover:rounded-full hover:text-dark-950 dark:hover:text-white flex duration-500`
     data-astro-prefetch
     target={target}>{name}</a
   >
