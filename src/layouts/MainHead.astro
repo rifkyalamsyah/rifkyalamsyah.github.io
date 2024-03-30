@@ -1,5 +1,5 @@
 ---
-const { title, seoDesc, ogImage, url, domain, keywords } = Astro.props;
+const { title, seoDesc, ogImage, url, domain } = Astro.props;
 import { ViewTransitions } from 'astro:transitions';
 ---
 
@@ -9,15 +9,13 @@ import { ViewTransitions } from 'astro:transitions';
   <meta name='viewport' content='width=device-width, initial-scale=1.0' />
   <title>{title}</title>
   <meta name='description' content={seoDesc} />
-  <meta name='keywords' content={keywords} />
   <meta name='author' content='Rifky Alamsyah' />
-  <!-- og fb -->
+  <!-- opengraph -->
   <meta property='og:url' content={url} />
   <meta property='og:type' content='website' />
   <meta property='og:title' content={title} />
   <meta property='og:description' content={seoDesc} />
   <meta property='og:image' content={ogImage} />
-  <!-- og x -->
   <meta name='twitter:card' content='summary_large_image' />
   <meta property='twitter:domain' content={domain} />
   <meta property='twitter:url' content={url} />

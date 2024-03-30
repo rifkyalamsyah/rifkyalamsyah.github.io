@@ -4,8 +4,6 @@ export const HOME_PAGE_SEO = {
   ogImage: 'https://rifkyalamsyah.github.io/images/og/og-rifky.png',
   url: 'https://rifkyalamsyah.github.io',
   domain: 'rifkyalamsyah.github.io',
-  keywords:
-    'ui designer, front-end web development, ui/ux designer, web designer, user interface design, user experience design, website development, front-end developer creative web design, responsive web design, ui/ux design, html/css, javascript, portfolio showcase. web design project, digital design expertise, webflow, webflow developer, webflow designer, rifky, rifky alamsyah, rifky dev, rifky ui designer, rifky webflow developer, rifky portfolio, rifky project, rifky blog'
 };
 
 export const ABOUT_PAGE_SEO = {
@@ -15,8 +13,6 @@ export const ABOUT_PAGE_SEO = {
   ogImage: 'https://rifkyalamsyah.github.io/images/og/og-rifky.png',
   url: 'https://rifkyalamsyah.github.io/about',
   domain: 'rifkyalamsyah.github.io/about',
-  keywords:
-    'ui designer, front-end web development, ui/ux designer, web designer, user interface design, user experience design, website development, front-end developer creative web design, responsive web design, ui/ux design, html/css, javascript, portfolio showcase. web design project, digital design expertise, webflow, webflow developer, webflow designer, rifky, rifky alamsyah, rifky dev, rifky ui designer, rifky webflow developer, rifky portfolio, rifky project, rifky blog',
 };
 
 export const PROJECT_PAGE_SEO = {
