@@ -4,6 +4,7 @@ import BackTo from '@components/navigation/Back.astro';
 import Badge from '@components/blog/BadgeLg.astro';
 import Button from '@components/button/Primary.astro';
 import Card from '@components/blog/Card.astro';
+import BackToTop from '@components/BackToTop.astro';
 
 import { formatDate } from '@utils';
 import { LATEST_POST_LIMIT } from '@config';
@@ -111,5 +112,6 @@ const domain = `rifkyalamsyah.github.io/blog/${entry.slug}`;
         />
       </div>
     </div>
+    <BackToTop />
   </section>
 </Layout>

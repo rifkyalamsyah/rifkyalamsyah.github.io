@@ -4,7 +4,7 @@ import Hi from '@components/Hi.astro';
 import Button from '@components/button/Primary.astro';
 
 // SEO
-import { HOME_PAGE_SEO } from '@config';
+import { HOME_PAGE_SEO } from '@data/seo';
 ---
 
 <Layout
@@ -19,7 +19,7 @@ import { HOME_PAGE_SEO } from '@config';
   </main>
   <section class='py-20'>
     <div class='container mx-auto'>
-      <Hi/>
+      <Hi />
       <h1 class='text-center text-3xl sm:text-5xl'>
         <span
           class='bg-gradient-to-r from-dark-300 to-dark-900 bg-clip-text text-transparent'
