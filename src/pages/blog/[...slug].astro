@@ -2,8 +2,11 @@
 import Layout from '@layouts/MainLayout.astro';
 import BackTo from '@components/navigation/Back.astro';
 import Badge from '@components/blog/BadgeLg.astro';
+import Button from '@components/button/Primary.astro';
+import Card from '@components/blog/Card.astro';
 
-import { formatDate } from '../../utils';
+import { formatDate } from '@utils';
+import { LATEST_POST_LIMIT } from '@config';
 import { Picture } from 'astro:assets';
 
 import { getCollection } from 'astro:content';
@@ -22,6 +25,12 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
+
+// Latest post
+const blog: CollectionEntry<'blog'>[] = (await getCollection('blog')).sort(
+  (a: CollectionEntry<'blog'>, b: CollectionEntry<'blog'>) =>
+    b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
 
 // SEO
 const title = `${entry.data.title} - Rifky Alamsyah`;
@@ -55,5 +64,52 @@ const domain = `rifkyalamsyah.github.io/blog/${entry.slug}`;
       />
       <Content />
     </article>
+    <div class='my-12'>
+      <hr class='border-wood-100/80 dark:border-wood-800/20 duration-1000' />
+    </div>
   </div>
+  <section>
+    <div class='container mx-auto'>
+      <div class='flex justify-between my-12'>
+        <h1
+          class='text-2xl lg:text-3xl text-center text-dark-500 dark:text-dark-300'
+        >
+          Latest Post
+        </h1>
+        <div class='hidden md:block'>
+          <Button
+            href='/blog'
+            name='See all post'
+            target=''
+            radius='rounded-xl'
+          />
+        </div>
+      </div>
+      <div class='grid lg:grid-cols-2 xl:grid-cols-3 gap-4 justify-center mt-4'>
+        {
+          blog
+            .slice(0, LATEST_POST_LIMIT)
+            .map((post) => (
+              <Card
+                link={`/blog/${post.slug}`}
+                imgSrc={post.data.image}
+                imgAlt={post.slug}
+                category={post.data.category}
+                title={post.data.title}
+                readingTime={post.data.readingTime}
+                pubDate={formatDate(post.data.pubDate)}
+              />
+            ))
+        }
+      </div>
+      <div class='md:hidden py-8 flex justify-center content-center'>
+        <Button
+          href='/blog'
+          name='See all post'
+          target=''
+          radius='rounded-xl'
+        />
+      </div>
+    </div>
+  </section>
 </Layout>

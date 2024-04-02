@@ -30,3 +30,9 @@ export const BLOG_PAGE_SEO = {
   url: 'https://rifkyalamsyah.github.io/blog',
   domain: 'rifkyalamsyah.github.io/blog',
 };
+
+// Latest post project card
+export const LATEST_PROJECT_LIMIT = 2;
+
+// Latest post blog card
+export const LATEST_POST_LIMIT = 3;

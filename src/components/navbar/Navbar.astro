@@ -1,5 +1,5 @@
 ---
-import { Astronav, MenuItems, MenuIcon } from 'astro-navbar';
+import { Astronav, MenuItems, MenuIcon, StickyHeader } from 'astro-navbar';
 import List from '@components/navbar/List.astro';
 import DropdownList from '@components/navbar/DropdownList.astro';
 import IconSun from '@icons/Sun.astro';
@@ -30,7 +30,7 @@ const dropdownLists = [
 ---
 
 <header
-  class='py-5 border-b border-dark-100/80 dark:border-dark-800/20 duration-1000'
+  class='py-5 border-b border-dark-100/10 dark:border-dark-800/10 duration-1000 sticky top-0 z-10 backdrop-blur-3xl bg-zink-50 dark:bg-darl-950'
 >
   <div class='container mx-auto flex flex-col lg:flex-row'>
     <Astronav>

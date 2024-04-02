@@ -2,9 +2,13 @@
 import Layout from '@layouts/MainLayout.astro';
 import BackTo from '@components/navigation/Back.astro';
 import Button from '@components/button/Primary.astro';
+import Card from '@components/project/CardRecentPost.astro';
+
+import { LATEST_PROJECT_LIMIT } from '@config';
 
 import { Picture } from 'astro:assets';
 import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
 
 export async function getStaticPaths() {
   const projects = await getCollection('portfolio');
@@ -19,6 +23,14 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
+
+// Latest project
+const project: CollectionEntry<'portfolio'>[] = (
+  await getCollection('portfolio')
+).sort(
+  (a: CollectionEntry<'portfolio'>, b: CollectionEntry<'portfolio'>) =>
+    b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
 
 // SEO
 const title = `${entry.data.sortTitle} - Rifky Alamsyah`;
@@ -61,6 +73,50 @@ const domain = `rifkyalamsyah.github.io/project/${entry.slug}`;
             </div>
             <Content />
           </article>
+        </div>
+      </div>
+    </section>
+    <div class='container mx-auto'>
+      <hr class='border-wood-100/80 dark:border-wood-800/20 duration-1000' />
+    </div>
+    <section class='py-8'>
+      <div class='container mx-auto'>
+        <div class='flex justify-between my-12'>
+          <h1 class='text-2xl lg:text-3xl text-center text-dark-500 dark:text-dark-300'>
+            Latest Project
+          </h1>
+          <div class='hidden md:block'>
+            <Button
+              href='/project'
+              name='See all project'
+              target=''
+              radius='rounded-xl'
+            />
+          </div>
+        </div>
+        <div
+          class='grid md:grid-cols-2 lg:grid-cols-2 gap-4 justify-center mt-4'
+        >
+          {
+            project
+              .slice(0, LATEST_PROJECT_LIMIT)
+              .map((post) => (
+                <Card
+                  slug={`/project/${post.slug}`}
+                  imgUrl={post.data.image}
+                  imgAlt={post.slug}
+                  title={post.data.title}
+                />
+              ))
+          }
+        </div>
+        <div class='md:hidden py-8 flex justify-center content-center'>
+          <Button
+            href='/project'
+            name='See all project'
+            target=''
+            radius='rounded-xl'
+          />
         </div>
       </div>
     </section>

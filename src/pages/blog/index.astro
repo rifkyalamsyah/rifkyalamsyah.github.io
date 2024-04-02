@@ -8,6 +8,7 @@ import MostRecentCard from '@components/blog/MostRecentArticle.astro';
 
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
+
 const blog: CollectionEntry<'blog'>[] = (await getCollection('blog')).sort(
   (a: CollectionEntry<'blog'>, b: CollectionEntry<'blog'>) =>
     b.data.pubDate.valueOf() - a.data.pubDate.valueOf()

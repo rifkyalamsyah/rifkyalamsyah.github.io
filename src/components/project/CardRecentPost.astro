@@ -1,0 +1,30 @@
+---
+import Picture from 'astro/components/Picture.astro';
+
+const { slug, imgUrl, imgAlt, title } = Astro.props;
+---
+
+<article>
+  <div
+    class='pb-5 bg-white dark:bg-dark-950/40 border border-dark-100/60 dark:border-dark-800/30 rounded-xl duration-1000'
+  >
+    <a href={slug}>
+      <Picture
+        src={imgUrl}
+        alt={imgAlt}
+        class='rounded-xl'
+        width={1280}
+        height={700}
+        formats={['avif', 'webp']}
+      />
+    </a>
+    <div class='mt-4 px-3 lg:px-4 flex flex-col'>
+      <a
+        href={slug}
+        class='text-lg text-black dark:text-white hover:text-dark-700 dark:hover:text-dark-200 line-clamp-1'
+      >
+        {title}
+      </a>
+    </div>
+  </div>
+</article>
