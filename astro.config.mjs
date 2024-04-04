@@ -9,7 +9,7 @@ export default defineConfig({
   integrations: [tailwind(), mdx(), sitemap(), partytown()],  
   output: 'static',
   prefetch: true,
-  compressHTML: false,
+  compressHTML: true,
   site: 'https://rifkyalamsyah.github.io',
   base: '/'
 });
