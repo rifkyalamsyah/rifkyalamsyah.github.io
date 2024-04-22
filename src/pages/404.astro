@@ -1,5 +1,6 @@
 ---
 import Layout from '@layouts/MainLayout.astro';
+import Button from '@components/button/Primary.astro';
 
 // SEO
 const title = '404 - Page Not Found';
@@ -10,14 +11,24 @@ const seoDesc = 'Page Not Found';
   <main class='mt-auto'>
     <section class='py-20'>
       <div class='container mx-auto text-center'>
-        <p class="text-4xl text-gray-500 dark:text-gray-400 mb-2">Whoops!</p>
-        <h1 class=' text-4xl sm:text-6xl'>
-          <span class='font-bold bg-gradient-to-r from-wood-500 to-wood-800 bg-clip-text text-transparent'>404 </span>
+        <p class='text-4xl text-gray-500 dark:text-gray-400 mb-2'>Whoops!</p>
+        <h1 class='text-4xl sm:text-6xl'>
+          <span
+            class='font-bold bg-gradient-to-r from-wood-500 to-wood-800 bg-clip-text text-transparent'
+            >404
+          </span>
           Not Found
         </h1>
-        <p class="text-xl text-gray-600 dark:text-gray-400 mt-2">Sorry, Page Not Found</p>
-        <div class="mt-8">
-            <a href="/" class=" bg-indigo-500 hover:bg-indigo-600 text-white px-5 py-3 rounded-full ">Back to Home</a>
+        <p class='text-xl text-gray-600 dark:text-gray-400 mt-2'>
+          Sorry, Page Not Found
+        </p>
+        <div class='mt-8'>
+          <Button
+            href='/'
+            name='Back to Home'
+            target=''
+            radius='rounded-full'
+          />
         </div>
       </div>
     </section>

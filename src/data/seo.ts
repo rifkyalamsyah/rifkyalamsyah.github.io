@@ -1,7 +1,7 @@
 export const HOME_PAGE_SEO = {
-    title: 'Rifky Alamsyah - UI Designer & Frontend Dev',
-    seoDesc: 'Discover his portfolio showcasing creativity and expertise in user interface design and front-end development.',
-    ogImage: 'https://rifkyalamsyah.github.io/images/og/og-rifky.png',
+    title: 'Rifky Alamsyah - UI Designer & Frontend Developer',
+    seoDesc: 'Creative UI/UX Designer & Frontend Developer. Explore Rifky Alamsyah portfolio and discover impactful design solutions.',
+    ogImage: 'https://rifkyalamsyah.github.io/images/og/og-rifky.webp',
     url: 'https://rifkyalamsyah.github.io',
     domain: 'rifkyalamsyah.github.io',
   };
@@ -9,24 +9,24 @@ export const HOME_PAGE_SEO = {
   export const ABOUT_PAGE_SEO = {
     title: 'About - Rifky Alamsyah',
     seoDesc:
-      'Learn more about Rifky Alamsyah, Explore his professional journey, innovative projects, and valuable blog posts on design, development, and digital products.',
-    ogImage: 'https://rifkyalamsyah.github.io/images/og/og-rifky.png',
+      'Explore the design journey of Rifky Alamsyah, UI/UX Designer & Frontend Developer. Discover innovative projects, insightful blog posts, and more!',
+    ogImage: 'https://rifkyalamsyah.github.io/images/og/og-rifky.webp',
     url: 'https://rifkyalamsyah.github.io/about',
     domain: 'rifkyalamsyah.github.io/about',
   };
   
   export const PROJECT_PAGE_SEO = {
     title: 'Projects - Rifky Alamsyah',
-    seoDesc: 'Discover Rifky Alamsyah impressive portfolio of projects, showcasing his expertise in innovative designs and development.',
-    ogImage: 'https://rifkyalamsyah.github.io/images/og/og-project.png',
+    seoDesc: 'See Rifky Alamsyah portfolio! Explore UI/UX design & development projects showcasing creativity & innovation.',
+    ogImage: 'https://rifkyalamsyah.github.io/images/og/og-project.webp',
     url: 'https://rifkyalamsyah.github.io/project',
     domain: 'rifkyalamsyah.github.io/project',
   };
   
   export const BLOG_PAGE_SEO = {
     title: 'Blog - Rifky Alamsyah',
-    seoDesc: 'Explore Rifky Alamsyah blog, offering valuable insights on design, development, and digital trends.',
-    ogImage: 'https://rifkyalamsyah.github.io/images/og/og-blog.png',
+    seoDesc: 'Get design & development insights! Explore Rifky Alamsyah blog for UI/UX trends, dev tips & more. Stay ahead of the digital curve.',
+    ogImage: 'https://rifkyalamsyah.github.io/images/og/og-blog.webp',
     url: 'https://rifkyalamsyah.github.io/blog',
     domain: 'rifkyalamsyah.github.io/blog',
   };

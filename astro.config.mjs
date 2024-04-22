@@ -8,9 +8,10 @@ import partytown from "@astrojs/partytown";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), mdx(), sitemap(), partytown(), (await import("@playform/compress")).default({
-    Image: false,
-    SVG: false,
+  integrations: [tailwind(), mdx(), sitemap(), partytown(), (await import("@playform/compress")).default({    
+		HTML: false,
+		Image: false,
+		SVG: false,
   })],
   output: 'static',
   prefetch: true,

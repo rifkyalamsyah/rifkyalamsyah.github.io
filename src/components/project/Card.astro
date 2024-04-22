@@ -8,7 +8,7 @@ const { slug, imgUrl, imgAlt, title, url } = Astro.props;
 
 <article>
   <div
-    class='pb-5 bg-white dark:bg-dark-950/40 border border-dark-100/60 dark:border-dark-800/30 rounded-xl duration-1000'
+    class='pb-5 h-full flex flex-col justify-between bg-white dark:bg-dark-950/40 border border-dark-100/60 dark:border-dark-800/30 rounded-xl duration-1000'
   >
     <a href={slug}>
       <Picture
@@ -20,17 +20,19 @@ const { slug, imgUrl, imgAlt, title, url } = Astro.props;
         formats={['avif', 'webp']}
       />
     </a>
-    <div class='mt-4 px-3 lg:px-4 flex flex-col'>
-      <a
-        href={slug}
-        class='text-lg text-black dark:text-white hover:text-dark-700 dark:hover:text-dark-200 line-clamp-1'
-      >
-        {title}
-      </a>
-    </div>
-    <div class='mt-2 px-3 lg:px-4 flex gap-3'>
-      <BtnPrimary href={slug} name='See Details' />
-      <BtnSecondary href={url} name='Visit Website' target='_blank' />
+    <div class="h-full flex flex-col justify-between">
+      <div class='mt-4 px-3 lg:px-4 flex flex-col'>
+        <a
+          href={slug}
+          class='text-lg text-black dark:text-white hover:text-dark-700 dark:hover:text-dark-200 line-clamp-2'
+        >
+          {title}
+        </a>
+      </div>
+      <div class='mt-2 px-3 lg:px-4 flex gap-3'>
+        <BtnPrimary href={slug} name='See Details' />
+        <BtnSecondary href={url} name='Visit Website' target='_blank' />
+      </div>
     </div>
   </div>
 </article>

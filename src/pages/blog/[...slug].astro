@@ -34,7 +34,7 @@ const blog: CollectionEntry<'blog'>[] = (await getCollection('blog')).sort(
 );
 
 // SEO
-const title = `${entry.data.title} - Rifky Alamsyah`;
+const title = `${entry.data.title}`;
 const seoDesc = `${entry.data.desc}`;
 const ogImage = `https://rifkyalamsyah.github.io${entry.data.imageUrl}`;
 const url = `https://rifkyalamsyah.github.io/blog/${entry.slug}`;
