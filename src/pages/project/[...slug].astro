@@ -1,9 +1,11 @@
 ---
-import Layout from '@layouts/MainLayout.astro';
+import Layout from '@layouts/PostLayout.astro';
 import BackTo from '@components/navigation/Back.astro';
 import Button from '@components/button/Primary.astro';
 import Card from '@components/project/CardRecentPost.astro';
 import BackToTop from '@components/BackToTop.astro';
+
+import { formatISO } from '@utils';
 
 import { LATEST_PROJECT_LIMIT } from '@config';
 
@@ -39,9 +41,10 @@ const seoDesc = entry.data.desc;
 const ogImage = `https://rifkyalamsyah.github.io${entry.data.image}`;
 const url = `https://rifkyalamsyah.github.io/project/${entry.slug}`;
 const domain = `rifkyalamsyah.github.io/project/${entry.slug}`;
+const pubDate = `${formatISO(entry.data.pubDate)}`;
 ---
 
-<Layout {title} {seoDesc} {ogImage} {url} {domain}>
+<Layout {title} {seoDesc} {ogImage} {url} {domain} {pubDate}>
   <main>
     <section class='py-8'>
       <div class='container mx-auto'>

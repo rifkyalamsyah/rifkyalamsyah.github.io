@@ -9,4 +9,9 @@ function formatDate(date: Date): string {
   return new Date(date).toLocaleDateString(undefined, options);
 }
 
-export { formatDate };
+// format the date to ISO date time format
+function formatISO(date: Date): string {
+  return date.toISOString();
+}
+
+export { formatDate, formatISO };
