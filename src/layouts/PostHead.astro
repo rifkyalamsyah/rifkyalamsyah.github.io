@@ -1,8 +1,6 @@
 ---
 const { title, seoDesc, ogImage, url, domain, type = 'article', pubDate } = Astro.props;
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
-
-import { ViewTransitions } from 'astro:transitions';
 ---
 
 <head>

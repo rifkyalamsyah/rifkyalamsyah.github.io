@@ -6,7 +6,7 @@ import Button from '@components/button/Primary.astro';
 import Card from '@components/blog/Card.astro';
 import BackToTop from '@components/BackToTop.astro';
 // ads
-import Banner728 from '@components/ads/banner728.astro';
+import BannerLarge from '@components/ads/BannerLarge.astro';
 
 import { formatDate, formatISO } from '@utils';
 import { LATEST_POST_LIMIT } from '@config';
@@ -70,7 +70,7 @@ const pubDate = `${formatISO(entry.data.pubDate)}`;
     <div class='my-12'>
       <hr class='border-wood-100/80 dark:border-wood-800/20 duration-1000' />
     </div>
-    <Banner728 className='mt-6 flex justify-center'/>
+    <BannerLarge className='mt-6 flex justify-center'/>
   </div>
   <section>
     <div class='container mx-auto'>
