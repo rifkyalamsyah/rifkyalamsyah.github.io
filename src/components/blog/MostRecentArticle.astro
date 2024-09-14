@@ -23,8 +23,9 @@ interface Props {
         ><Picture
           src={post.data.image}
           class='rounded-xl lg:max-w-lg'
-          alt='last-post-image'
+          alt={post.data.title}
           formats={['avif', 'webp']}
+          loading={'eager'}
         /></a
       >
     </div>

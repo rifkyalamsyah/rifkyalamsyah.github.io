@@ -1,5 +1,5 @@
 ---
-import Layout from '@layouts/PostLayout.astro';
+import Layout from '@layouts/MainLayout.astro';
 import BackTo from '@components/navigation/Back.astro';
 import Button from '@components/button/Primary.astro';
 import Card from '@components/project/CardRecentPost.astro';
@@ -73,6 +73,7 @@ const pubDate = `${formatISO(entry.data.pubDate)}`;
                 width={1280}
                 height={720}
                 formats={['avif', 'webp']}
+                loading={'eager'}
               />
             </div>
             <Content />

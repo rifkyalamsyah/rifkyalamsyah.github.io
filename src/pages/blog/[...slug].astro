@@ -64,6 +64,7 @@ const pubDate = `${formatISO(entry.data.pubDate)}`;
         src={entry.data.image}
         alt={entry.data.title}
         formats={['avif', 'webp']}
+        loading={'eager'}
       />
       <Content />
     </article>
