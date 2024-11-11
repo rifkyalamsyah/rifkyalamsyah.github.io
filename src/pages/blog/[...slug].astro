@@ -40,9 +40,10 @@ const ogImage = `https://rifkyalamsyah.github.io${entry.data.imageUrl}`;
 const url = `https://rifkyalamsyah.github.io/blog/${entry.slug}`;
 const domain = `rifkyalamsyah.github.io/blog/${entry.slug}`;
 const pubDate = `${formatISO(entry.data.pubDate)}`;
+const modDate = `${formatISO(entry.data.modDate)}`;
 ---
 
-<Layout {title} {seoDesc} {ogImage} {url} {domain} {pubDate}>
+<Layout {title} {seoDesc} {ogImage} {url} {domain} {pubDate} {modDate}>
   <div class='container mx-auto'>
     <div class='my-4 flex'>
       <BackTo href='/blog' name='Back' />
@@ -73,11 +74,11 @@ const pubDate = `${formatISO(entry.data.pubDate)}`;
   <section>
     <div class='container mx-auto'>
       <div class='flex justify-between my-12'>
-        <h1
+        <h2
           class='text-2xl lg:text-3xl text-center text-dark-500 dark:text-dark-300'
         >
           Latest Post
-        </h1>
+        </h2>
         <div class='hidden md:block'>
           <Button
             href='/blog'
