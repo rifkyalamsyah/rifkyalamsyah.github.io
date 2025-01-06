@@ -19,17 +19,15 @@ const { link, imgSrc, imgAlt, category, title, readingTime, pubDate } =
         loading={'eager'}
       />
     </a>
-
     <div class='text-wrapper mt-4 mb-3 px-2 sm:px-3'>
       <div class='flex'>
         <Badge value={category} />
       </div>
-
       <a
         href={link}
         class='text-xl text-black dark:text-white hover:text-dark-700 dark:hover:text-dark-200 line-clamp-2'
       >
-        {title}
+        <h2>{title}</h2>
       </a>
       <p class='text-sm text-gray-500 dark:text-gray-400'>
         {readingTime} -
