@@ -21,13 +21,13 @@ const { slug, imgUrl, imgAlt, title, url } = Astro.props;
         loading={'eager'}
       />
     </a>
-    <div class='h-full flex flex-col justify-between'>
+    <div class='h-full flex flex-col justify-between gap-2'>
       <div class='mt-4 px-3 lg:px-4 flex flex-col'>
         <a
           href={slug}
           class='text-lg text-black dark:text-white hover:text-dark-700 dark:hover:text-dark-200 line-clamp-2'
         >
-          <h2>{title}</h2>
+          <h3 class="lg:text-2xl">{title}</h3>
         </a>
       </div>
       <div class='mt-2 px-3 lg:px-4 flex gap-3'>

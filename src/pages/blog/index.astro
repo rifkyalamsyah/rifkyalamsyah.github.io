@@ -19,6 +19,11 @@ const otherArticles: CollectionEntry<'blog'>[] = blog.slice(1);
 
 // SEO
 import { BLOG_PAGE_SEO } from '@data/seo';
+
+const data = {
+  title: '👨🏻‍💻 Design & Dev 👾 Insights',
+  desc: 'Explore articles on UI/UX design, front-end development, web trends, and best practices. Learn how to build better digital experiences.'
+}
 ---
 
 <Layout
@@ -30,13 +35,13 @@ import { BLOG_PAGE_SEO } from '@data/seo';
 >
   <main>
     <div class='container mx-auto lg:py-8'>
-      <div class='py-6'>
+      <div class='py-12 flex flex-col items-center gap-4'>
         <div class='flex justify-center'>
           <Badge title='Blog' />
         </div>
-        <p class='mt-2 text-lg text-center text-dark-500 dark:text-dark-300'>
-          Insights, thoughts and trends in design.<br class='hidden sm:block' />
-          Explore my insightful articles.
+        <h2 class="lg:w-[56%] text-4xl lg:text-6xl text-center">{data.title}</h2>
+        <p class='lg:w-[52%] mt-2 text-lg text-center text-dark-500 dark:text-dark-300'>
+          {data.desc}
         </p>
       </div>
       <MostRecentCard post={mostRecentArticle} />

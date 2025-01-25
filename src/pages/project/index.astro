@@ -14,6 +14,11 @@ const project: CollectionEntry<'portfolio'>[] = (
 
 // SEO
 import { PROJECT_PAGE_SEO } from '@data/seo';
+
+const data = {
+  title: '🔮 Crafting Digital Experiences That Convert ✨',
+  desc: "Websites that drive business growth. UI/UX, front-end dev, WordPress & modern frameworks. Let's elevate your online presence.",
+};
 ---
 
 <Layout
@@ -26,14 +31,17 @@ import { PROJECT_PAGE_SEO } from '@data/seo';
   <main>
     <section>
       <div class='container mx-auto py-8'>
-        <div class='py-6'>
+        <div class='py-12 flex flex-col items-center gap-4'>
           <div class='flex justify-center'>
             <Badge title='Projects' />
           </div>
-          <p class='mt-2 text-lg text-center text-dark-500 dark:text-dark-300'>
-            Explore my portfolio, where passion and creativity <br
-              class='hidden sm:block'
-            /> converge to shape enthralling visual narratives.
+          <h2 class='lg:w-[60%] text-4xl lg:text-6xl text-center'>
+            {data.title}
+          </h2>
+          <p
+            class='lg:w-[56%] mt-2 text-lg text-center text-dark-500 dark:text-dark-300'
+          >
+            {data.desc}
           </p>
         </div>
         <div

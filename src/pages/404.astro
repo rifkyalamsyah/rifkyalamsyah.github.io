@@ -5,6 +5,12 @@ import Button from '@components/button/Primary.astro';
 // SEO
 const title = '404 - Page Not Found';
 const seoDesc = 'Page Not Found';
+
+const data = {
+  span: '404',
+  title: 'Not Found',
+  desc: 'Sorry, Page Not Found'
+}
 ---
 
 <Layout {title} {seoDesc}>
@@ -15,12 +21,12 @@ const seoDesc = 'Page Not Found';
         <h1 class='text-4xl sm:text-6xl'>
           <span
             class='font-bold bg-gradient-to-r from-wood-500 to-wood-800 bg-clip-text text-transparent'
-            >404
+            >{data.span}
           </span>
-          Not Found
+          {data.title}
         </h1>
         <p class='text-xl text-gray-600 dark:text-gray-400 mt-2'>
-          Sorry, Page Not Found
+          {data.desc}
         </p>
         <div class='mt-8'>
           <Button

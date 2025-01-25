@@ -20,15 +20,15 @@ const a = {
   target: '_blank',
 };
 
-// links card
+// links cards
 const links = [
   {
-    title: 'Project',
+    title: 'Projects',
     desc: 'Discover my portfolio.',
     url: '/project',
     class: 'lg:col-span-2 lg:row-start-2',
     textBtn: 'See Portfolio',
-    target: '',
+    target: '_self',
   },
   {
     title: 'Gumroad',
@@ -44,7 +44,7 @@ const links = [
     url: '/blog',
     class: 'lg:col-start-4 lg:row-start-2',
     textBtn: 'Read Article',
-    target: '',
+    target: '_self',
   },
 ];
 ---
@@ -57,7 +57,6 @@ const links = [
   doamin={ABOUT_PAGE_SEO.domain}
 >
   <main class='mt-auto'>
-    <div class='relative h-full w-full bg-red'></div>
     <section>
       <div class='container mx-auto py-8'>
         <div class='grid grid-col-4 grid-rows-2 gap-2 xl:mx-10'>
