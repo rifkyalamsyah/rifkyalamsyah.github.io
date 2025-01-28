@@ -2,15 +2,21 @@
 import Layout from '@layouts/MainLayout.astro';
 import Card from '@components/project/Card.astro';
 import Badge from '@components/Badge.astro';
+import Button from '@components/button/Primary.astro';
+import BtnSecondary from '@components/project/BtnSecondary.astro';
+import { Image } from 'astro:assets';
 
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
+
 const project: CollectionEntry<'portfolio'>[] = (
   await getCollection('portfolio')
 ).sort(
   (a: CollectionEntry<'portfolio'>, b: CollectionEntry<'portfolio'>) =>
     b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
+
+const archived: CollectionEntry<'portfolio'>[] = project.slice(6);
 
 // SEO
 import { PROJECT_PAGE_SEO } from '@data/seo';
@@ -48,17 +54,60 @@ const data = {
           class='grid md:grid-cols-2 lg:grid-cols-2 gap-4 justify-center mt-4'
         >
           {
-            project.map((post) => (
-              <Card
-                slug={`/project/${post.slug}`}
-                imgUrl={post.data.image}
-                imgAlt={post.slug}
-                title={post.data.title}
-                url={post.data.linkWeb}
-              />
+            project
+              .slice(0, 6)
+              .map((post) => (
+                <Card
+                  slug={`/project/${post.slug}`}
+                  imgUrl={post.data.image}
+                  imgAlt={post.slug}
+                  title={post.data.title}
+                  url={post.data.linkWeb}
+                />
+              ))
+          }
+        </div>
+        <!-- archiver -->
+        <div class='pt-24 pb-4 flex flex-col justify-between'>
+          <div class='pb-8 flex justify-between items-center border-b border-dark-100 dark:border-dark-900'>
+            <h2 class='text-4xl lg:text-4xl'>💾 Archived</h2>
+            <Button
+              href='/project/archived'
+              name='View All'
+              radius='rounded-full'
+            />
+          </div>
+          {
+            archived.slice(0).map((list) => (
+              <div class='py-8 flex flex-col md:flex-row lg:justify-between gap-4 border-b border-dark-100 dark:border-dark-900 duration-700'>
+                <div class='flex flex-col md:flex-row justify-items-start md:items-center gap-6 lg:gap-12'>
+                  <a href={`/project/${list.slug}`}>
+                    <Image
+                      src={list.data.image}
+                      alt='img'
+                      width='350'
+                      height='350'
+                      class='rounded-lg w-full md:w-[200px] lg:w-[400px]'
+                    />
+                  </a>
+                  <div class='md:w-[60%] flex'>
+                    <a href={`/project/${list.slug}`} class='hover:underline'>
+                      <h3 class='text-lg lg:text-2xl'>{list.data.title}</h3>
+                    </a>
+                  </div>
+                </div>
+                <div class='md:w-[30%] flex md:flex-row md:justify-end items-center lg:gap-24'>
+                  <BtnSecondary
+                    href={list.data.linkWeb}
+                    name='Visit Website'
+                    target='_blank'
+                  />
+                </div>
+              </div>
             ))
           }
         </div>
+        <!-- archiver end -->
       </div>
     </section>
   </main>
