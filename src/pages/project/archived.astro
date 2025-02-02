@@ -14,7 +14,7 @@ const project: CollectionEntry<'portfolio'>[] = (
     b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 
-const archived: CollectionEntry<'portfolio'>[] = project.slice(2);
+const archived: CollectionEntry<'portfolio'>[] = project.slice(0);
 
 // SEO
 import { PROJECT_PAGE_SEO } from '@data/seo';
