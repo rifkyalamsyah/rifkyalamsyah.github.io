@@ -16,7 +16,7 @@ const project: CollectionEntry<'portfolio'>[] = (
     b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 
-const archived: CollectionEntry<'portfolio'>[] = project.slice(6);
+const archived: CollectionEntry<'portfolio'>[] = project.slice(4);
 
 // SEO
 import { PROJECT_PAGE_SEO } from '@data/seo';
@@ -55,7 +55,7 @@ const data = {
         >
           {
             project
-              .slice(0, 6)
+              .slice(0, 4)
               .map((post) => (
                 <Card
                   slug={`/project/${post.slug}`}
